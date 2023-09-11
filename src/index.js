@@ -5,13 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AllyView from './routes/allyView';
+import "./style.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}/>
-      <Route path="ally" element={<AllyView />}/>
+      <Route path="ally" element={<AllyView/>}/>
     </Routes>
   </BrowserRouter>
 );
