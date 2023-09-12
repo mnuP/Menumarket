@@ -4,8 +4,8 @@ import Row from 'react-bootstrap/Row';
 
 function Items() {
   return (
-    <Row style={{margin: "0 5vw"}} xs={1} md={5} className="g-4">
-      {Array.from({ length: 5 }).map((_, idx) => (
+    <Row style={{margin: "0 5vw 5vw 5vw"}} xs={1} md={5} className="g-4">
+      {Array.from({ length: 20 }).map((_, idx) => (
         <div style={{padding:"0 2vw"}}>
         <Col key={idx}>
           <Card>

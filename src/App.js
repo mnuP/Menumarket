@@ -1,6 +1,7 @@
 import Navigation from './routes/Navigation';
 import Items from './routes/Items';
 import Filters from './routes/Filters';
+import Footer from './routes/Footer';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navigation/>
       <Filters/>
       <Items/>
+      <Footer/>
     </div>
   );
 }
