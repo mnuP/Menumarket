@@ -2,20 +2,21 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import style from"../navigation.module.css";
+import style from"../navigation.module.css";
 
 
 function Filters() {
   return (
-    <Navbar style={{margin:"0 3vw"}} key="md" expand="md" className="mb-3 text-dark">
+    <Navbar className={style.navbar} >
         <Container fluid>
             {['Ciudad', 'Tipo', 'Precio', "Restaurantes", "Esperiencias Tematicas", "Regalos Corporativos", "Catas"].map(
             (variant) => (
 
                 <DropdownButton
                 key={variant}
-                id={`dropdown-split-variants-${variant}`}
-                variant={variant.toLowerCase()}
                 title={variant}
+                className={style.dropdown}
                 >     
                     <Dropdown.Item eventKey="1">Action</Dropdown.Item>
                     <Dropdown.Divider />

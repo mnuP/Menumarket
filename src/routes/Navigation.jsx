@@ -3,14 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import "../style.css";
+import style from"../navigation.module.css";
 
 
 function Navigation() {
   return (
     <>
-        <Navbar style={{backgroundColor:"#000000"}} key="md" expand="md" className="mb-3 text-dark">
-          <Container fluid>
+        <Navbar key="md" expand="md" className={style.linearG}>
+          <Container style={{position:"absolute", top:"0"}}fluid>
             <Navbar.Brand style={{width:"15vw", marginRight:"5vw"}} href="#">
               <img
                 src="https://menumarket.co/wp-content/uploads/2022/03/menu-logo.png"
