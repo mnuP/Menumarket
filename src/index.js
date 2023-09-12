@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AllyView from './routes/allyView';
+import {AllyView} from './routes/allyView';
 import "./style.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
