@@ -20,5 +20,25 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const analytics = getAnalytics(app);
-const dataBase = getFirestore(app);
+const db = getFirestore(app);
 const storage = getStorage(app);
+
+//functions
+
+export async function getTodosCard(){
+  try {
+    const refDocs = collection(db,"usersPrincipal");
+    const allDocs = await getDocs(refDocs);
+
+    const eachDoc = [];
+  
+    allDocs.forEach((doc) => {
+      eachDoc.push({id: doc.id, titulo: doc.data().titulo, tiempo: doc.data().tiempo, foto: doc.data().foto});
+    });
+
+    return eachDoc;
+
+  } catch (error) {
+    console.error("erro al obtener los documentos: ", error);
+  }
+}  

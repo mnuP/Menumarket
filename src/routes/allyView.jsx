@@ -4,7 +4,7 @@ import imagenFondo from "../images/imagen-fondo-proveedor.png";
 import imagenSE from "../images/imagen-SE.png";
 import imagen1 from "../images/imagen-1.png";
 
-
+    
 export const AllyView = () => {
   return (
     <div className="desktop">
@@ -13,9 +13,7 @@ export const AllyView = () => {
           <div className="overlap-group">
           <img className="imagen-fondo" alt="Imagen fondo" src={imagenFondo} />
             <div className="text-wrapper">Genera tu cotizacion</div>
-            <button className="button">
-              <button className="button-2">!Cotiza aqui!</button>
-            </button>
+            <button className="button">!Cotiza aqui!</button>
             <div className="proveedor">
               <div className="rectangle" />
               <img className="imagen" alt="Imagen" src={imagen1} />

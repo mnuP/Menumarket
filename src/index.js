@@ -15,8 +15,3 @@ root.render(
     </Routes>
   </BrowserRouter>
 );
-
-<<<<<<< HEAD
-
-=======
->>>>>>> f1767d18ae48ecd2f1a8270530e3359dbc01539a
