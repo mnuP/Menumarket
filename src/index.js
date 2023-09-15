@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {AllyView} from './routes/allyView';
 import "./style.css";
+import UploadData from './routes/UploadData';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}/>
       <Route path="ally" element={<AllyView/>}/>
+      <Route path="Upload" element={<UploadData/>}/>
     </Routes>
   </BrowserRouter>
 );
