@@ -9,12 +9,12 @@ const useFirestore = (id) =>{
     const collectionRef = collection(db, id);
 
     useEffect(()=> {
-            const dataTest =  onSnapshot(collectionRef,(querySnapshot) => { 
-                const items = [];
-                querySnapshot.forEach((doc) => {
-                    items.push({...doc.data(), id: doc.id});
-                });
-            setItems(items);
+        const dataTest =  onSnapshot(collectionRef,(querySnapshot) => { 
+            const items = [];
+            querySnapshot.forEach((doc) => {
+                items.push({...doc.data(), id: doc.id});
+            });
+        setItems(items);
         });
         return () => {
             dataTest();
