@@ -18,8 +18,8 @@ function Items(props) {
           <Card key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
-              <Card.Title>{item.titulo}</Card.Title>
-              <Card.Text>
+              <Card.Title key={item.titulo}>{item.titulo}</Card.Title>
+              <Card.Text key={item.descripcionSe}>
                 {item.descripcionSe}
               </Card.Text>
             </Card.Body>

@@ -4,28 +4,21 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import style from"../filter.module.css";
 import useFirestore from "../hooks/useFirestore"
+import Tipo from '../routes/Tipo';
+import Ciudad from '../routes/Ciudad';
+
 
 
 function Filters() {
     const { items } = useFirestore('cuidadOpciones');
-
+    console.log(items);
     
   return (
     <Navbar className={style.navbar} >
         <Container fluid className={style.dropdown}>
 
-        <DropdownButton key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
-        {items.map((item) => (
-            <>
-                <Dropdown.Item eventKey="1">{item.ciudad}</Dropdown.Item>            
-            </>
-            ))}
-        </DropdownButton>
-
-        <DropdownButton key="Tipo" id={`dropdown-split-variants-tipo`} title="Tipo" variant = "tipo">
-            <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-            <Dropdown.Divider />
-        </DropdownButton>
+        <Ciudad/>
+        <Tipo/>
         
         <DropdownButton key="Precio" id={`dropdown-split-variants-precio`} title="Precio" variant = "precio">
             <Dropdown.Item eventKey="1">Action</Dropdown.Item>
