@@ -8,7 +8,7 @@ function Tipo() {
   const { items } = useFirestore('tipoOpciones');
     
   return (
-    <DropdownButton key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
+    <DropdownButton key="Tipo" id={`dropdown-split-variants-ciudad`} title="Tipo" variant = "Tipo">
       {items.map((item) => (
         <>
           <Dropdown.Item eventKey="1" key={item.tipo}>{item.tipo}</Dropdown.Item>            
