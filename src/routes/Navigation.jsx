@@ -10,8 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import style from"../navigation.module.css";
 import { getTodosCard } from "../firebase/firebase.js";
+import { setCurrentProvider } from "../firebase/firebase.js";
 
-const todaCard = getTodosCard();
 
 export default function Navigation() {
 
@@ -57,7 +57,6 @@ export default function Navigation() {
     }
   //-------------------------Autehntication--END-------------------//
   //-------------------------DATABASE--------START-----------------//
-    
 
 
   //-------------------------DATABASE--------END-------------------//

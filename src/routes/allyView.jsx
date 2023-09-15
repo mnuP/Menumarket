@@ -3,7 +3,7 @@ import "../style.css";
 import imagenFondo from "../images/imagen-fondo-proveedor.png";
 import imagenSE from "../images/imagen-SE.png";
 import imagen1 from "../images/imagen-1.png";
-
+import { getCurrentProvider } from "../firebase/firebase.js";
     
 export const AllyView = () => {
   return (
@@ -12,7 +12,7 @@ export const AllyView = () => {
         <div className="overlap-group">
           <div className="overlap-group">
           <img className="imagen-fondo" alt="Imagen fondo" src={imagenFondo} />
-            <div className="text-wrapper">Genera tu cotizacion</div>
+            <div className="text-wrapper">{getCurrentProvider}</div>
             <button className="button">!Cotiza aqui!</button>
             <div className="proveedor">
               <div className="rectangle" />
