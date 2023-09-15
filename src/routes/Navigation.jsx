@@ -32,11 +32,11 @@ export default function Navigation() {
 
     async function handleOnClickNP(){
       if(currentUser){
-          navigate("/ally");
+          navigate("/#");
       }else{
         doAuthenticate();
         if(currentUser){
-          navigate("/ally");
+          navigate("/#");
         }
       }
     }

@@ -1,10 +1,13 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import useFirestore from "../hooks/useFirestore"
+import useFirestore from "../hooks/useFirestore";
+import { useNavigate } from 'react-router-dom';
 
-function Items() {
+function Items(props) {
   const { items } = useFirestore('usersPrincipal');
+  const navigate = useNavigate();
+
 
   return (
 
@@ -12,7 +15,7 @@ function Items() {
       {items.map((item) => (
         <div style={{padding:"0 2vw"}}>
         <Col>
-          <Card key={item.id}>
+          <Card key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
             <Card.Img variant="top" src="holder.js/100px160" />
             <Card.Body>
               <Card.Title>{item.titulo}</Card.Title>
