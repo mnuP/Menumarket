@@ -5,12 +5,13 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import imagenFondo from "../images/fondoPostulacion.jpg";
 
 
 function UploadData() {
   return (
     <div className="fondo-p">
-      <img className="imagen-p" alt="Imagen p" src="imagen-p.png" />
+      <img className="imagen-p" alt="Imagen p" src={imagenFondo} />
       <div className="horizontal-p">
         <p className="se-parte-de">Se Parte De Menumarket Llenando Tu Postulacion Aqui.</p>
       </div>

@@ -240,15 +240,14 @@
   flex-direction: column;
   gap: 10px;
   position: relative;
-  background-image: url("./images/fondoPostulacion.jpg");
-  width: 100vw;
+  width: 100%;
 }
 
 .fondo-p .imagen-p {
   height: 1340px;
   object-fit: cover;
   position: relative;
-  width: 1440px;
+  width: 100vw;
 }
 
 .fondo-p .horizontal-p {
@@ -256,19 +255,18 @@
   background-color: #d5c25dcc;
   display: flex;
   gap: 10px;
-  height: 310px;
+  height: 337px;
   left: 70px;
   padding: 10px 50px;
   position: absolute;
   top: 158px;
   width: 80vw;
-  right: 70px;
 }
 
 .fondo-p .se-parte-de {
   color: #ffffff;
   font-family: "Kameron-Regular", Helvetica;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
   height: 260px;
   letter-spacing: 0;
@@ -282,7 +280,6 @@
   display: inline-flex;
   gap: 10px;
   left: 400px;
-  width: 868;
   position: absolute;
   top: 70px;
   background-image: url("./images/imagen-fondo-proveedor.png");
