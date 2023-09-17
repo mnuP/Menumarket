@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { db } from '../firebase/firebase'
 import { onSnapshot, collection} from "firebase/firestore"; 
 
-
-
 const useFirestore = (id) =>{
     const [items, setItems] = useState([]);
     const collectionRef = collection(db, id);

@@ -1,19 +1,25 @@
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import useFirestore from "../hooks/useFirestore"
-import Dropdown from 'react-bootstrap/Dropdown';
+import { useState } from "react";
 
 
-
-function Tipo() {
+function Ciudad(prop) {
+  const [city, setCity] = useState('');
   const { items } = useFirestore('cuidadOpciones');
-    
+
+  prop.ciudad(city);
+  
+  const handleChangeCourse = event => {
+    setCity({ city: event.target.value });
+  };
+
   return (
-    <DropdownButton key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
+    <select onChange={handleChangeCourse} key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
+      <option eventKey="1" key="All">All</option> 
       {items.map((item) => (
         <>
-            <Dropdown.Item eventKey="1" key={item.ciudad}>{item.ciudad}</Dropdown.Item>            
+          <option eventKey={item.ciudad} key={item.ciudad}>{item.ciudad}</option>            
         </>
       ))}
-    </DropdownButton>
+    </select>
   )}
-export default Tipo;
+export default Ciudad;

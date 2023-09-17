@@ -59,14 +59,7 @@ function UploadData() {
         console.log(e);
     }
   };
-
-  // const uploadImage = async() => {
-  //   const imageRef = ref(storage, `eventos/${"Profile" + imageUpload.name}`);
-  //   await uploadBytes(imageRef, imageUpload)
-  //   const url = await getDownloadURL(imageRef);
-  //   setUrl(url);
-  // }
-
+  
   return (
     <div className="fondo-p">
       <img className="imagen-p" alt="Imagen p" src={imagenFondo} />
