@@ -2,8 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getAuth} from 'firebase/auth';
-import {getStorage, ref, uploadBytes, getDownloadURL, getBytes} from 'firebase/storage';
-import {getFirestore, collection, addDoc, getDocs, doc, getDOc, query, where, setDoc, deleteDoc} from 'firebase/firestore';
+import {getStorage} from 'firebase/storage';
+import {getFirestore, collection, getDocs} from 'firebase/firestore';
 
 const firebaseConfig = {
   // we use env so its safer
@@ -21,7 +21,7 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const analytics = getAnalytics(app);
 export const db = getFirestore(app);
-const storage = getStorage(app);
+export const storage = getStorage(app);
 
 //functions
 

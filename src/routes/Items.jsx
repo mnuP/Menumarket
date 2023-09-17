@@ -16,11 +16,11 @@ function Items(props) {
         <div style={{padding:"0 2vw"}}>
         <Col>
           <Card key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
-            <Card.Img variant="top" src="https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+            <Card.Img variant="top" src={item.photo} />
             <Card.Body>
-              <Card.Title key={item.titulo}>{item.titulo}</Card.Title>
+              <Card.Title key={item.title}>{item.title}</Card.Title>
               <Card.Text key={item.descripcionSe}>
-                {item.descripcionSe}
+                {item.description}
               </Card.Text>
             </Card.Body>
           </Card>
