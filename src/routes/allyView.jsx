@@ -25,10 +25,10 @@ export const AllyView = (props) => {
           </div>
           <div className="informacion-basica">
             <div className="frame">
-              <div className="text-wrapper-2">Maximo de Personas: {location.state.item.maximun}</div>
+              <div className="text-wrapper-2">Capacidad: {location.state.item.capacity} Personas</div>
             </div>
             <div className="frame">
-              <div className="text-wrapper-2">Minimo de Personas: {location.state.item.minimun}</div>
+              <div className="text-wrapper-2">Disponibilidad Horaria: {location.state.item.disponibility}</div>
             </div>
             <div className="frame">
               <div className="text-wrapper-2">Duracion: {location.state.item.time} horas</div>
