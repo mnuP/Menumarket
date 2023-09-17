@@ -19,22 +19,22 @@ export const AllyView = (props) => {
             <button className="button">!Cotiza aqui!</button>
             <div className="proveedor">
               <div className="rectangle" />
-              <img className="imagen" alt="Imagen" src={imagen1} />
-              <div className="titulo-experiencia">{location.state.item.titulo}</div>
+              <img className="imagen" alt="Imagen" src={location.state.item.photo} />
+              <div className="titulo-experiencia">{location.state.item.title}</div>
             </div>
           </div>
           <div className="informacion-basica">
             <div className="frame">
-              <div className="text-wrapper-2">Maximo de Personas: {location.state.item.maximo}</div>
+              <div className="text-wrapper-2">Maximo de Personas: {location.state.item.maximun}</div>
             </div>
             <div className="frame">
-              <div className="text-wrapper-2">Minimo de Personas: {location.state.item.minimo}</div>
+              <div className="text-wrapper-2">Minimo de Personas: {location.state.item.minimun}</div>
             </div>
             <div className="frame">
-              <div className="text-wrapper-2">Duracion: {location.state.item.tiempo} horas</div>
+              <div className="text-wrapper-2">Duracion: {location.state.item.time} horas</div>
             </div>
             <div className="frame">
-              <div className="text-wrapper-2">{location.state.item.incluye}</div>
+              <div className="text-wrapper-2">{location.state.item.includes}</div>
             </div>
           </div>
           <img className="pepicons-pencil" alt="Pepicons pencil" src="https://api.iconify.design/pepicons-pencil/people.svg" />
@@ -42,7 +42,7 @@ export const AllyView = (props) => {
           <img className="formkit-time" alt="Formkit time" src="https://api.iconify.design/formkit/time.svg" />
           <img className="codicon-settings" alt="Codicon settings" src="https://api.iconify.design/codicon/settings.svg" />
         </div>
-        <p className="texto-experiencia">{location.state.item.descripcionSe}</p>
+        <p className="texto-experiencia">{location.state.item.description}</p>
         <div className="overlap">
           <img className="imagen-SE" alt="Imagen SE" src={imagenSE} />
           <div className="rectangle-2" />
