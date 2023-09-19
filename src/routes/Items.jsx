@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import useFirestore from "../hooks/useFirestore";
+import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,7 +9,9 @@ import style from"../filter.module.css";
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from "react";
 import { db } from '../firebase/firebase'
-import { onSnapshot, collection} from "firebase/firestore"; 
+import { onSnapshot, collection} from "firebase/firestore";
+import "../styleForm.css";
+
 
 
 function Items() {
@@ -21,22 +23,14 @@ function Items() {
   const collectionRef = collection(db, "usersPrincipal");
   const navigate = useNavigate();
 
-  // const filterCity= (city) => {
-  //   let results;
-  //   if(city == "All"){
-  //     results = items
-  //   } else {
-  //     results = items.filter((curData) => {
-  //     return curData.city == city;
-  //   })}
-  //   setDishes(results)
-  // }
-
   const filterCity= (city) => {
     let results;
-    results = items.filter((curData) => {
-    return curData.city == city;
-    })
+    if(city == "All"){
+      results = items
+    } else {
+      results = items.filter((curData) => {
+      return curData.city == city;
+    })}
     setDishes(results)
   }
 
@@ -71,22 +65,13 @@ function Items() {
       <Navbar className={style.navbar}>
         <Container fluid>
         {/* Ciudad */}
-          {/* <select onChange={(e) => filterCity(e.target.value)} key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
+          <select onChange={(e) => filterCity(e.target.value)} key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
             {ciudad.map((item) => (
               <>
                 <option eventKey={item} key={item}>{item}</option>            
-              </>          
-            </select>
-
-            ))} */}
-
-
-          {ciudad.map((item) => (
-            <Button onClick={(e) => filterCity(e.target.title)} key={item} id={`dropdown-split-variants-${item}`} title={item} variant = {item}>
-              {item}
-            </Button>
-            ),
-          )}  
+              </>              
+              ))}        
+          </select>
 
           <div className="vr"></div>
 
