@@ -13,37 +13,57 @@ import { onSnapshot, collection} from "firebase/firestore";
 
 
 function Items() {
-  const tipos = ["Restaurantes", "Esperiencias Tematicas", "Regalos Corporativos", "Catas"];
-  const ciudad = ["All", "Bogota", "Medellin"];
-  
+  const tipos = ["Cata", "Catering", "Chef en Casa", "Master Class",   "Regalos Corporativos", "Restaurantes", "Taller de Cocina"];
+  const ciudad = ["Bogota", "Medellin"];
+
   const [items, setItems] = useState([]);
   const [dishes, setDishes] = useState(items);
   const collectionRef = collection(db, "usersPrincipal");
   const navigate = useNavigate();
 
+  // const filterCity= (city) => {
+  //   let results;
+  //   if(city == "All"){
+  //     results = items
+  //   } else {
+  //     results = items.filter((curData) => {
+  //     return curData.city == city;
+  //   })}
+  //   setDishes(results)
+  // }
+
   const filterCity= (city) => {
     let results;
-    if(city == "All"){
-      results = items
-    } else {
-      results = items.filter((curData) => {
-      return curData.city == city;
-    })}
+    results = items.filter((curData) => {
+    return curData.city == city;
+    })
     setDishes(results)
   }
 
+  const filterTipo= (tipo) => {
+    let results;
+    results = items.filter((curData) => {
+    return curData.class == tipo;
+    })
+    setDishes(results)
+  }
+
+  const resetFiltro= () => {
+    setDishes(items)
+  }
+
   useEffect(()=> {
-      const dataTest =  onSnapshot(collectionRef,(querySnapshot) => { 
-          const items = [];
-          querySnapshot.forEach((doc) => {
-              items.push({...doc.data(), id: doc.id});
-          });
-      setItems(items);
-      setDishes(items);
-      });
-      return () => {
-          dataTest();
-      };
+    const dataTest =  onSnapshot(collectionRef,(querySnapshot) => { 
+        const items = [];
+        querySnapshot.forEach((doc) => {
+            items.push({...doc.data(), id: doc.id});
+        });
+    setItems(items);
+    setDishes(items);
+    });
+    return () => {
+        dataTest();
+    };
   }, []);
 
   return (
@@ -51,21 +71,39 @@ function Items() {
       <Navbar className={style.navbar}>
         <Container fluid>
         {/* Ciudad */}
-          <select onChange={(e) => filterCity(e.target.value)} key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
+          {/* <select onChange={(e) => filterCity(e.target.value)} key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
             {ciudad.map((item) => (
               <>
                 <option eventKey={item} key={item}>{item}</option>            
-              </>
-            ))}
-          </select>
-          
-          {/* Tipo */}
-          {tipos.map((item) => (
-            <Button key={item} id={`dropdown-split-variants-${item}`} title={item} variant = {item}>
+              </>          
+            </select>
+
+            ))} */}
+
+
+          {ciudad.map((item) => (
+            <Button onClick={(e) => filterCity(e.target.title)} key={item} id={`dropdown-split-variants-${item}`} title={item} variant = {item}>
               {item}
             </Button>
             ),
-          )}         
+          )}  
+
+          <div className="vr"></div>
+
+          {/* Tipo */}
+          {tipos.map((item) => (
+            <Button onClick={(e) => filterTipo(e.target.title)} key={item} id={`dropdown-split-variants-${item}`} title={item} variant = {item}>
+              {item}
+            </Button>
+            ),
+          )}    
+
+          <div className="vr"></div>
+
+          <Button onClick={(e) => resetFiltro()} key="reset" id={`dropdown-split-variants-reset`} title="reset" variant = "reset">
+            Reset Filtro
+          </Button>
+
         </Container>
       </Navbar>
 
