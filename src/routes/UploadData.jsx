@@ -10,7 +10,6 @@ import { storage } from "../firebase/firebase";
 import { ref, uploadBytes,getDownloadURL} from "firebase/storage";
 import {collection, addDoc, serverTimestamp} from 'firebase/firestore';
 import { db } from '../firebase/firebase';
-import "../styleForm.css";
 
 
 function UploadData() {  
