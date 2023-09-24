@@ -43,6 +43,7 @@ function Admin() {
 
   async function handleOnCLickLogin(){
     const googleProvider = new GoogleAuthProvider();
+    googleProvider.setCustomParameters({ prompt: 'select_account' });
     await singInWithGoogle(googleProvider);
 
     async function singInWithGoogle(googleProvider){

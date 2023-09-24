@@ -4,12 +4,14 @@ import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "../style.css";
-import {auth} from "../firebase/firebase";
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
+import {auth, logout} from "../firebase/firebase";
+import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import style from"../navigation.module.css";
 import { getTodosCard } from "../firebase/firebase.js";
+import nullImage from "../images/nullPP.png";
+
 
 
 export default function Navigation() {
@@ -24,39 +26,60 @@ export default function Navigation() {
 
     function handleUserStateChanged(user){
         if(user){
-            console.log(user);
             setCurrent(user);
         }
     }
 
 
     async function handleOnClickNP(){
-      if(currentUser){
-          navigate("/UploadData");
+      /*if(currentUser){
+          navigate("/Upload");
       }else{
         doAuthenticate();
         if(currentUser){
-          navigate("/UploadData");
+          navigate("/Upload");
         }
-      }
+      }*/
+      doAuthenticate();
     }
 
     async function doAuthenticate(){
       const googleProvider = new GoogleAuthProvider();  
+      googleProvider.setCustomParameters({ prompt: 'select_account' });
       await singInWithGoogle(googleProvider);
     
       async function singInWithGoogle(googleProvider){
         try {
           const res = await signInWithPopup(auth, googleProvider);
-          console.log(res);
         } catch (error) {
           console.error(error);
         }
       }
+      refreshPage();
     }
+
+
+    async function doLogout() {
+      await logout();
+      refreshPage();
+    }
+
+    function handleOnClickGoUpload(){
+      if(currentUser){
+        navigate("/Upload");
+      }else{
+        doAuthenticate();
+        if(currentUser){
+          navigate("/Upload");
+        }
+      }
+    };
+
   //-------------------------Autehntication--END-------------------//
   //-------------------------DATABASE--------START-----------------//
-
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   //-------------------------DATABASE--------END-------------------//
 
@@ -88,7 +111,14 @@ export default function Navigation() {
                     aria-label="Search"
                     size="sm"
                   />
-                  <Button onClick={handleOnClickNP} style={{width:"15vw", backgroundColor:"#000000", borderBlockColor:"#CCD888", color:"#CCD888", borderWidth:"0.2em"}} className="ButtonName" variant="outline-success">Se Parte de Menumarket!</Button>
+                  <Button key="ButtonAuth" onClick={handleOnClickNP} style={{width: "46px",borderRadius: "50%",height: "46px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888",display: "flex",justifyContent: "center",alignItems: "center"}}className="ButtonName"variant="outline-success">
+                    {currentUser ? (
+                      <img src={currentUser.photoURL} alt="User Profile" style={{width: "40px",borderRadius: "50%",height: "40px",}}/>
+                      ) : (
+                      <img src={nullImage} alt="User Profile" style={{width: "40px", borderRadius: "50%",height: "40px",}}/>)}
+                  </Button>
+                  <Button key="ButonGO" onClick={handleOnClickGoUpload} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Profile</Button>
+                  <Button key="ButtonLog" onClick={doLogout} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>LogOut</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

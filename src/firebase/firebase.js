@@ -25,6 +25,10 @@ export const storage = getStorage(app);
 
 //functions
 
+export async function logout() {
+  await auth.signOut();
+}
+
 export async function getTodosCard(){
   try {
     const refDocs = collection(db,"usersPrincipal");
