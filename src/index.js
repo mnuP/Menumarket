@@ -7,6 +7,7 @@ import {AllyView} from './routes/allyView';
 import "./style.css";
 import UploadData from './routes/UploadData';
 import Admin from './routes/Admin';
+import {InvoicePage} from './routes/Invoice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <Route path="ally" element={<AllyView/>}/>
       <Route path="Upload" element={<UploadData/>}/>
       <Route path="CFSHEBCH7/Admin" element={<Admin/>}/>
+      <Route path="ally/cotizacion" element={<InvoicePage/>}/>
     </Routes>
   </BrowserRouter>
 );

@@ -96,7 +96,7 @@ function Items() {
         {dishes.map((item) => (
           <div style={{padding:"0 2vw"}}>
           <Col>
-            <Card key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
+            <Card  key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
               <Card.Img variant="top" src={item.photo} />
               <Card.Body>
                 <Card.Title key={item.title}>{item.title}</Card.Title>

@@ -4,10 +4,13 @@ import imagenFondo from "../images/imagen-fondo-proveedor.png";
 import imagenSE from "../images/imagen-SE.png";
 import imagen1 from "../images/imagen-1.png";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
     
 export const AllyView = (props) => {
   const location = useLocation();
   console.log(location);
+  const navigate = useNavigate();
+  const itemPass = location.state.item;
 
   return (
     <div className="desktop">
@@ -16,7 +19,7 @@ export const AllyView = (props) => {
           <div className="overlap-group">
           <img className="imagen-fondo" alt="Imagen fondo" src={imagenFondo} />
             <div className="text-wrapper">Cotiza con nosotros</div>
-            <button className="button">!Cotiza aqui!</button>
+            <button onClick={()=>{navigate("cotizacion", {state:{itemPass}})}} className="button">!Cotiza aqui!</button>
             <div className="proveedor">
               <div className="rectangle" />
               <img className="imagen" alt="Imagen" src={location.state.item.photo} />
