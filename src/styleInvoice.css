@@ -70,7 +70,8 @@ body{
     min-height: 920px;
 }
 .invoice-head-top-left img{
-    width: 130px;
+    width: 240px;
+    height: 70px;
 }
 .invoice-head-top-right h3{
     font-weight: 500;

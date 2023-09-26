@@ -51,6 +51,7 @@ export default function Navigation() {
       async function singInWithGoogle(googleProvider){
         try {
           const res = await signInWithPopup(auth, googleProvider);
+      
         } catch (error) {
           console.error(error);
         }
@@ -117,7 +118,7 @@ export default function Navigation() {
                       ) : (
                       <img src={nullImage} alt="User Profile" style={{width: "40px", borderRadius: "50%",height: "40px",}}/>)}
                   </Button>
-                  <Button key="ButonGO" onClick={handleOnClickGoUpload} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Profile</Button>
+                  <Button id="ButonGO" onClick={handleOnClickGoUpload} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Profile</Button>
                   <Button key="ButtonLog" onClick={doLogout} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>LogOut</Button>
                 </Form>
               </Offcanvas.Body>
