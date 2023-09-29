@@ -8,7 +8,7 @@ import imagenFondo from "../images/fondoPostulacion.jpg";
 import { useEffect, useState } from "react";
 import { storage, auth } from "../firebase/firebase";
 import { ref, uploadBytes,getDownloadURL} from "firebase/storage";
-import {collection, addDoc, serverTimestamp, onSnapshot} from 'firebase/firestore';
+import {collection, addDoc, deleteDoc, serverTimestamp, onSnapshot, doc} from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 import "../styleForm.css";
@@ -31,6 +31,7 @@ function Admin() {
   const [accepted, setAccepted] = useState(true);
   const [items, setItems] = useState([]);
   const [itemIndex, setItemIndex] = useState(0);
+  const [itemID, setItemID] = useState(0);
   const collectionRef = collection(db, "usersPrincipal");
   const [currentUser, setCurrentUser] = useState(null);
     /*
@@ -111,8 +112,19 @@ function Admin() {
       setPrecio(items[itemIndex].price)
       setIncluye(items[itemIndex].includes)
       setUrl(items[itemIndex].photo)
+      setItemID(items[itemIndex].id)
     };  
   };
+
+  async function deleteDocument(){
+    try {
+      const docRef = doc(db, 'usersPrincipal', itemID);
+      deleteDoc(docRef);
+
+    }catch(err){
+      console.log(err);
+    };
+  }
   
   const uploadForm = async(e) =>{  
 
@@ -141,8 +153,10 @@ function Admin() {
           timeStamp: serverTimestamp(),
           accepted: accepted
         })
+
+        deleteDocument();
       } catch (e) {
-        console.log(e);
+        window.alert(e);
     }
   };
 
@@ -214,7 +228,7 @@ function Admin() {
   
           <Row className="mb-3">
             <Form.Group as={Col} controlId="max">
-              <Form.Label className="flTxt">Capacidad</Form.Label>
+              <Form.Label className="flTxt">Capacidad Max</Form.Label>
               <Form.Control onChange={(event) => {setCapacity(event.target.value)}} value={capacity}/>
             </Form.Group>
   
@@ -252,7 +266,7 @@ function Admin() {
             Aceptar
           </Button>
           
-          <Button>
+          <Button onClick={deleteDocument}>
             Rechazar
           </Button>
   

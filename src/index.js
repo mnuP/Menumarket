@@ -8,6 +8,7 @@ import "./style.css";
 import UploadData from './routes/UploadData';
 import Admin from './routes/Admin';
 import {InvoicePage} from './routes/Invoice';
+import AllyProfile from './routes/allyProfile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,9 +16,10 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}/>
       <Route path="ally" element={<AllyView/>}/>
-      <Route path="Upload" element={<UploadData/>}/>
+      <Route path="user/Upload" element={<UploadData/>}/>
       <Route path="CFSHEBCH7/Admin" element={<Admin/>}/>
       <Route path="ally/cotizacion" element={<InvoicePage/>}/>
+      <Route path="user" element={<AllyProfile/>}/>
     </Routes>
   </BrowserRouter>
 );

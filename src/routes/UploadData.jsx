@@ -7,12 +7,13 @@ import Row from 'react-bootstrap/Row';
 import imagenFondo from "../images/fondoPostulacion.jpg";
 import { useState } from "react";
 import { storage } from "../firebase/firebase";
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ref, uploadBytes,getDownloadURL} from "firebase/storage";
 import {collection, addDoc, serverTimestamp} from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
 
-function UploadData() {  
+function UploadData(props) {  
   const [imageUpload, setImageUpload] = useState('');
   const [titulo, setTitulo] =useState(0);
   const [ciudad, setCiudad] =useState(0);
@@ -27,6 +28,8 @@ function UploadData() {
   const [incluye, setIncluye] =useState(0);
   const [url, setUrl] = useState(0);
   const [accepted, setAccepted] = useState(false);
+  const location = useLocation();
+  const itemPass = location.state.userUID;
   
   const uploadForm = async(e) =>{   
 

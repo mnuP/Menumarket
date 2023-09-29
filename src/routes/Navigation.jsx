@@ -9,7 +9,6 @@ import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import style from"../navigation.module.css";
-import { getTodosCard } from "../firebase/firebase.js";
 import nullImage from "../images/nullPP.png";
 
 
@@ -19,6 +18,7 @@ export default function Navigation() {
     //-------------------------Autehntication--START-----------------//
     const [currentUser, setCurrent] = useState(null);
     const navigate = useNavigate();
+    const [userUID, setCurrentUID] = useState("");
 
     useEffect(() =>{
         onAuthStateChanged(auth, handleUserStateChanged);
@@ -27,6 +27,7 @@ export default function Navigation() {
     function handleUserStateChanged(user){
         if(user){
             setCurrent(user);
+            setCurrentUID(user.uid);
         }
     }
 
@@ -67,12 +68,9 @@ export default function Navigation() {
 
     function handleOnClickGoUpload(){
       if(currentUser){
-        navigate("/Upload");
+        navigate("/user", {state: {userUID}});
       }else{
-        doAuthenticate();
-        if(currentUser){
-          navigate("/Upload");
-        }
+        doAuthenticate().then(navigate("/user", {state: {userUID}}));
       }
     };
 
