@@ -29,8 +29,9 @@ function UploadData(props) {
   const [url, setUrl] = useState(0);
   const [accepted, setAccepted] = useState(false);
   const location = useLocation();
-  const itemPass = location.state.userUID;
+  const itemPass = location.state.itemPass;
   
+
   const uploadForm = async(e) =>{   
 
     e.preventDefault();
@@ -55,7 +56,8 @@ function UploadData(props) {
           includes: incluye,
           photo: url,
           timeStamp: serverTimestamp(),
-          accepted: accepted
+          accepted: accepted,
+          user: itemPass
         })
       } catch (e) {
         console.log(e);
