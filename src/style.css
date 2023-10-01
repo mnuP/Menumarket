@@ -217,7 +217,6 @@
   font-family: "Inter-Medium", Helvetica;
   font-size: 32px;
   font-weight: 500;
-  left: 840px;
   letter-spacing: 0;
   line-height: 38px;
   position: absolute;
@@ -262,7 +261,7 @@
     display: none;
   }
   .desktop .overlap {
-    top: 638px;
+    top: 700px;
   }
   .desktop .div{
     height: 1500px;
@@ -275,11 +274,14 @@
   }
   .desktop .texto-experiencia {
     top: 997px;
-    left: 730px;
+    right: 15vw;
+  }
+  .desktop .p {
+    right: 15vw;
   }
   .desktop .overlap {
     top: 838px;
-    left: 180px;
+    left: 15vw;
   }
   .desktop .imagen-SE{
     height: 420px;

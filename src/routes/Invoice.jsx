@@ -115,12 +115,6 @@ export const InvoicePage = (props) => {
                             </span>
                             <span>Print</span>
                         </button>
-                            <button type = "button" className = "invoice-btn">
-                                <span>
-                                    <i className="fa-solid fa-download"></i>
-                                </span>
-                                <span>Download</span>
-                            </button>
                         </div>
                     </div>
                 </div>
