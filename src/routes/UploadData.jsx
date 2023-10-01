@@ -58,6 +58,7 @@ function UploadData(props) {
           accepted: "No Aceptado",
           user: itemPass
         })
+        window.alert("!Su postulacion ha sido enviada¡");
       } catch (e) {
         console.log(e);
     }
@@ -80,6 +81,7 @@ function UploadData(props) {
           <Form.Group as={Col} controlId="ciudad">
             <Form.Label className="flTxt">Ciudad:</Form.Label>
             <Form.Select onChange={(event) => {setCiudad(event.target.value)}} defaultValue="Choose...">
+              <option>Todas</option>
               <option>Bogota</option>
               <option>Medellin</option>
             </Form.Select>
@@ -101,7 +103,7 @@ function UploadData(props) {
           </Form.Group>
 
           <Form.Group as={Col} controlId="tipo">
-            <Form.Label className="flTxt">Tipo:</Form.Label>
+            <Form.Label className="flTxt">Modalidad:</Form.Label>
             <Form.Select onChange={(event) => {setModality(event.target.value)}} defaultValue="Choose...">
               <option>Presencial</option>
               <option>Virtual</option>
@@ -159,7 +161,7 @@ function UploadData(props) {
           />
         </InputGroup>
 
-        <Button variant="primary" type="submit">
+        <Button variant="light" type="submit">
           Enviar
         </Button>
       </Form>

@@ -65,11 +65,11 @@ export const InvoicePage = (props) => {
                             <table>
                                 <thead>
                                     <tr>
-                                        <td className = "text-bold">Service</td>
-                                        <td className = "text-bold">Description</td>
-                                        <td className = "text-bold">Rate</td>
-                                        <td className = "text-bold">QTY</td>
-                                        <td className = "text-bold">Amount</td>
+                                        <td className = "text-bold">Servicio</td>
+                                        <td className = "text-bold">Descripcion</td>
+                                        <td className = "text-bold">Valor</td>
+                                        <td className = "text-bold">Ctd</td>
+                                        <td className = "text-bold">Total</td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -106,14 +106,14 @@ export const InvoicePage = (props) => {
                         </div>
                     </div>
                     <div className = "invoice-foot text-center">
-                        <p><span className = "text-bold text-center">NOTE:&nbsp;</span>This is computer generated receipt and does not require physical signature.</p>
+                        <p><span className = "text-bold text-center">NOTA:&nbsp;</span>Esta es una cotizacion realizada por computador y no necesita firma fisica.</p>
 
                         <div className = "invoice-btns">
                         <button type="button" className="invoice-btn" onClick={printCotizacion}>
                             <span>
                                 <i className="fa-solid fa-print"></i>
                             </span>
-                            <span>Print</span>
+                            <span>Imprimir</span>
                         </button>
                         </div>
                     </div>

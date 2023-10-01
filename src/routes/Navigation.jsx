@@ -19,6 +19,9 @@ export default function Navigation() {
     const [currentUser, setCurrent] = useState(null);
     const navigate = useNavigate();
     const [userUID, setCurrentUID] = useState("");
+    const [outButt, setOutButt] = useState("none");
+    const [singButt, setSingButt] = useState("Iniciar Sesion");
+    console.log(outButt);
 
     useEffect(() =>{
         onAuthStateChanged(auth, handleUserStateChanged);
@@ -28,6 +31,8 @@ export default function Navigation() {
         if(user){
             setCurrent(user);
             setCurrentUID(user.uid);
+            setOutButt("");
+            setSingButt("Perfil");
         }
     }
 
@@ -63,6 +68,8 @@ export default function Navigation() {
 
     async function doLogout() {
       await logout();
+      setOutButt("");
+      setSingButt("Iniciar Sesion");
       refreshPage();
     }
 
@@ -70,7 +77,7 @@ export default function Navigation() {
       if(currentUser){
         navigate("/user", {state: {userUID}});
       }else{
-        doAuthenticate().then(navigate("/user", {state: {userUID}}));
+        doAuthenticate();
       }
     };
 
@@ -116,8 +123,8 @@ export default function Navigation() {
                       ) : (
                       <img src={nullImage} alt="User Profile" style={{width: "40px", borderRadius: "50%",height: "40px",}}/>)}
                   </Button>
-                  <Button id="ButonGO" onClick={handleOnClickGoUpload} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Profile</Button>
-                  <Button key="ButtonLog" onClick={doLogout} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>LogOut</Button>
+                  <Button id="ButonGO" onClick={handleOnClickGoUpload} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>{singButt}</Button>
+                  <Button key="ButtonLog" onClick={doLogout} style={{display: outButt,height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Cerrar Sesion</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
