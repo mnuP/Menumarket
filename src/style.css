@@ -8,7 +8,6 @@
 
 .desktop .div {
   background-color: #ffffff;
-  height: 2000px;
   position: relative;
   width: 100vw;
 }
@@ -35,7 +34,6 @@
   font-family: "Lalezar-Regular", Helvetica;
   font-size: 30px;
   font-weight: 400;
-  left: 180px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -43,9 +41,11 @@
   top: 172px;
 }
 
+
 .desktop .button {
   all: unset;
   align-items: center;
+  color: white;
   background-color: #0000008f;
   border: 2px solid;
   border-color: #e3e570;
@@ -54,7 +54,6 @@
   gap: 10px;
   height: 54px;
   justify-content: center;
-  left: 178px;
   padding: 12px 24px;
   position: absolute;
   top: 243px;
@@ -79,7 +78,6 @@
   align-items: flex-start;
   display: inline-flex;
   gap: 10px;
-  left: 730px;
   position: absolute;
   top: 115px;
 }
@@ -94,7 +92,7 @@
 
 .desktop .imagen {
   height: 440px;
-  left: 0;
+  left: 0px;
   object-fit: cover;
   position: absolute;
   top: 0;
@@ -119,7 +117,6 @@
   align-items: flex-start;
   display: inline-flex;
   flex-direction: column;
-  left: 180px;
   position: absolute;
   top: 424px;
 }
@@ -184,30 +181,25 @@
   font-family: "Inter-Medium", Helvetica;
   font-size: 18px;
   font-weight: 500;
-  left: 730px;
   letter-spacing: 0;
   line-height: 22px;
   position: absolute;
   text-align: justify;
-  top: 997px;
   width: 530px;
 }
 
 .desktop .overlap {
   height: 462px;
-  left: 180px;
   position: absolute;
-  top: 838px;
   width: 460px;
 }
 
 .desktop .imagen-SE {
-  height: 420px;
   left: 0;
   object-fit: cover;
   position: absolute;
   top: 42px;
-  width: 420px;
+  
 }
 
 .desktop .rectangle-2 {
@@ -249,6 +241,121 @@
   position: relative;
 }
 
+@media (max-width: 1500px){
+  .desktop .proveedor {
+    display: none;
+  }
+  .desktop .rectangle-2{
+    display: none;
+  }
+  .desktop .texto-experiencia {
+    top: 1097px;
+    left: 10vw;
+    right: 10vw;
+    width: 80vw;
+  }
+  .desktop .imagen-SE{
+    height: 320px;
+    width: 100vw;
+  }
+  .desktop .p {
+    display: none;
+  }
+  .desktop .overlap {
+    top: 638px;
+  }
+  .desktop .div{
+    height: 1500px;
+  }
+}
+
+@media (min-width: 1500px){
+  .desktop .div{
+    height: 2000px;
+  }
+  .desktop .texto-experiencia {
+    top: 997px;
+    left: 730px;
+  }
+  .desktop .overlap {
+    top: 838px;
+    left: 180px;
+  }
+  .desktop .imagen-SE{
+    height: 420px;
+  }
+  .desktop .imagen-SE{
+    width: 420px;
+  }
+}
+
+
+@media (max-width: 1000px){
+  
+  .fondo-p .horizontal-p {
+    display: none;
+  }
+  .fondo-p .se-parte-de {
+    display: none;
+  }
+  .desktop .text-wrapper {
+    left: 10vw;
+  }
+  .desktop .button {
+    left: 10vw;
+  }
+  .desktop .informacion-basica {
+    left: 14vw;
+  }
+  .desktop .pepicons-pencil {
+    left: 6vw;
+  }
+  .desktop .octicon-person {
+    left: 6vw;
+  }
+  .desktop .formkit-time {
+    left: 6vw;
+  }
+  .desktop .codicon-settings {
+    left: 6vw;
+  }
+
+}
+
+@media (min-width: 1000px){
+  
+  .fondo-p .form-p {
+    left: 400px;
+  }
+  .desktop .text-wrapper {
+    left: 15vw;
+  }
+  .desktop .button {
+    left: 15vw;
+  }
+  .desktop .proveedor {
+    right: 15vw;
+  }
+  .desktop .informacion-basica {
+    left: 18vw;
+  }
+  .desktop .pepicons-pencil {
+    left: 14vw;
+  }
+  
+  .desktop .octicon-person {
+    left: 14vw;
+  }
+  
+  .desktop .formkit-time {
+    left: 14vw;
+  }
+  
+  .desktop .codicon-settings {
+    left: 14vw;
+  }
+}
+
 .fondo-p .horizontal-p {
   align-items: center;
   background-color: #d5c25dcc;
@@ -274,11 +381,12 @@
   width: 230px;
 }
 
+
+
 .fondo-p .form-p {
   align-items: flex-start;
   display: inline-flex;
   gap: 10px;
-  left: 400px;
   position: absolute;
   top: 70px;
   background-image: url("./images/imagen-fondo-proveedor.png");
