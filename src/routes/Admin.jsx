@@ -28,11 +28,12 @@ function Admin() {
   const [precio, setPrecio] =useState(0);
   const [incluye, setIncluye] =useState(0);
   const [url, setUrl] = useState(0);
-  const [accepted, setAccepted] = useState(true);
+  const [accepted, setAccepted] = useState("No aceptado");
   const [items, setItems] = useState([]);
   const [itemIndex, setItemIndex] = useState(0);
   const [itemID, setItemID] = useState(0);
   const collectionRef = collection(db, "usersPrincipal");
+  const collectionRefN = collection(db, "usersNoAceptados");
   const [currentUser, setCurrentUser] = useState(null);
     /*
     0: Inicializando
@@ -74,7 +75,7 @@ function Admin() {
 
   //--------------------Auth /\ -------------
   async function callAllItems(){
-    const dataTest =  await onSnapshot(collectionRef,(querySnapshot) => { 
+    const dataTest =  await onSnapshot(collectionRefN,(querySnapshot) => { 
       const items = [];
       querySnapshot.forEach((doc) => {
           items.push({...doc.data(), id: doc.id});
@@ -113,12 +114,15 @@ function Admin() {
       setIncluye(items[itemIndex].includes)
       setUrl(items[itemIndex].photo)
       setItemID(items[itemIndex].id)
+      setAccepted(items[itemIndex].accepted)
+    }else{
+      window.alert("Debe importar los proveedores");
     };  
   };
 
   async function deleteDocument(){
     try {
-      const docRef = doc(db, 'usersPrincipal', itemID);
+      const docRef = doc(db, 'usersNoAceptados', itemID);
       deleteDoc(docRef);
 
     }catch(err){
@@ -129,14 +133,14 @@ function Admin() {
   const uploadForm = async(e) =>{  
 
     e.preventDefault();
-    const imageRef = ref(storage, `eventos/${"Profile" + imageUpload.name}`);
+    /*const imageRef = ref(storage, `eventos/${"Profile" + imageUpload.name}`);
     await uploadBytes(imageRef, imageUpload)
     const url = await getDownloadURL(imageRef);
-    setUrl(url);
+    setUrl(url);*/
 
     try{ 
       console.log(titulo+ciudad+clase+modality+dir+desc+capacity+disponibility+tiempo+precio+incluye+url+accepted);
-      const dataDocs = await addDoc(collection(db,"usersPrincipal"), 
+      const dataDocs = await addDoc(collectionRef, 
         {
           title: titulo,
           city: ciudad,
@@ -151,7 +155,7 @@ function Admin() {
           includes: incluye,
           photo: url,
           timeStamp: serverTimestamp(),
-          accepted: accepted
+          accepted: "Aceptado"
         })
 
         deleteDocument();
@@ -175,6 +179,9 @@ function Admin() {
         <img className="imagen-p" alt="Imagen p" src={imagenFondo} />
         <div className="form-p">
           <Form onSubmit={uploadForm} style={{ padding:"10vh 5vw"}}>
+          <Button variant="warning" onClick={callAllItems}>
+            Importar proveedores
+          </Button>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="titulo">
               <Form.Label className="flTxt">Titulo:</Form.Label>
@@ -258,29 +265,27 @@ function Admin() {
               placeholder="Subir Imagen"
               aria-describedby="basic-addon2"
               type='file'
-              onChange={(event) => {setImageUpload(event.target.files[0])}}
+              //onChange={(event) => {setImageUpload(event.target.files[0])}}
             />
           </InputGroup>
   
-          <Button variant="primary" type="submit">
+          <Button variant="success" type="submit">
             Aceptar
           </Button>
-          
-          <Button onClick={deleteDocument}>
+          <Button variant="danger" onClick={deleteDocument}>
             Rechazar
           </Button>
-  
-          <Button onClick={callAllItems}>
-            Importar proveedores
-          </Button>
-          <Button onClick={avanzarItem}>
-            Siguiente
-          </Button>
-          <Button onClick={retrocedeItem}>
+          <Button variant="info" onClick={retrocedeItem}>
             Anterior
           </Button>
-          <Button onClick={asignarValoresALabels}>
+          <Button variant="info" onClick={avanzarItem}>
+            Siguiente
+          </Button>
+          <Button variant="info" onClick={asignarValoresALabels}>
             Ver postulacion: {itemIndex + 1}
+          </Button>
+          <Button variant="warning" disabled>
+            {accepted}
           </Button>
         </Form>
         </div>

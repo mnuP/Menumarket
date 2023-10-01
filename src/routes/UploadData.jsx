@@ -27,7 +27,6 @@ function UploadData(props) {
   const [precio, setPrecio] =useState(0);
   const [incluye, setIncluye] =useState(0);
   const [url, setUrl] = useState(0);
-  const [accepted, setAccepted] = useState(false);
   const location = useLocation();
   const itemPass = location.state.itemPass;
   
@@ -41,7 +40,7 @@ function UploadData(props) {
     setUrl(url);
 
     try{ 
-      const dataDocs = await addDoc(collection(db,"usersPrincipal"), 
+      const dataDocs = await addDoc(collection(db,"usersNoAceptados"), 
         {
           title: titulo,
           city: ciudad,
@@ -56,7 +55,7 @@ function UploadData(props) {
           includes: incluye,
           photo: url,
           timeStamp: serverTimestamp(),
-          accepted: accepted,
+          accepted: "No Aceptado",
           user: itemPass
         })
       } catch (e) {
