@@ -28,13 +28,13 @@ function Admin() {
   const [precio, setPrecio] =useState(0);
   const [incluye, setIncluye] =useState(0);
   const [url, setUrl] = useState(0);
-  const [accepted, setAccepted] = useState("No aceptado");
   const [items, setItems] = useState([]);
   const [itemIndex, setItemIndex] = useState(0);
   const [itemID, setItemID] = useState(0);
   const collectionRef = collection(db, "usersPrincipal");
   const collectionRefN = collection(db, "usersNoAceptados");
   const [currentUser, setCurrentUser] = useState(null);
+  const [user, setUser] = useState(null);
     /*
     0: Inicializando
     1: Login Pero sin registro
@@ -114,7 +114,7 @@ function Admin() {
       setIncluye(items[itemIndex].includes)
       setUrl(items[itemIndex].photo)
       setItemID(items[itemIndex].id)
-      setAccepted(items[itemIndex].accepted)
+      setUser(items[itemIndex].user)
     }else{
       window.alert("Debe importar los proveedores");
     };  
@@ -139,7 +139,6 @@ function Admin() {
     setUrl(url);*/
 
     try{ 
-      console.log(titulo+ciudad+clase+modality+dir+desc+capacity+disponibility+tiempo+precio+incluye+url+accepted);
       const dataDocs = await addDoc(collectionRef, 
         {
           title: titulo,
@@ -155,7 +154,7 @@ function Admin() {
           includes: incluye,
           photo: url,
           timeStamp: serverTimestamp(),
-          accepted: "Aceptado"
+          user: user
         })
 
         deleteDocument();
@@ -283,9 +282,6 @@ function Admin() {
           </Button>
           <Button variant="info" onClick={asignarValoresALabels}>
             Ver postulacion: {itemIndex + 1}
-          </Button>
-          <Button variant="warning" disabled>
-            {accepted}
           </Button>
         </Form>
         </div>
