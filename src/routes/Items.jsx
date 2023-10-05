@@ -150,14 +150,7 @@ function Items() {
                     <Card.Body>
                       <Card.Title key={item.title}>{item.title}</Card.Title>
                       <Card.Text key={item.description}>
-                        {item.description}
-                        <div className="vr"></div>
-
-                        {item.class}
-                        <div className="vr"></div>
-                        {item.city}
-                        <div className="vr"></div>
-                        {item.modality}
+                        
                       </Card.Text>
                     </Card.Body>
                   </Card>

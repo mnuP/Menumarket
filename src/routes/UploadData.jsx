@@ -81,6 +81,7 @@ function UploadData(props) {
           <Form.Group as={Col} controlId="ciudad">
             <Form.Label className="flTxt">Ciudad:</Form.Label>
             <Form.Select onChange={(event) => {setCiudad(event.target.value)}} defaultValue="Choose...">
+              <option>Seleccionar...</option>
               <option>Todas</option>
               <option>Bogota</option>
               <option>Medellin</option>
@@ -92,7 +93,8 @@ function UploadData(props) {
           <Form.Group as={Col} controlId="clase">
             <Form.Label className="flTxt"> Clase:</Form.Label>
             <Form.Select onChange={(event) => {setClase(event.target.value)}} defaultValue="Choose...">
-              <option>Restaurante</option>
+              <option>Seleccionar...</option>
+              <option>Restaurantes</option>
               <option>Cata</option>
               <option>Taller de Cocina</option>
               <option>MasterClass</option>
@@ -105,6 +107,7 @@ function UploadData(props) {
           <Form.Group as={Col} controlId="tipo">
             <Form.Label className="flTxt">Modalidad:</Form.Label>
             <Form.Select onChange={(event) => {setModality(event.target.value)}} defaultValue="Choose...">
+              <option>Seleccionar...</option>
               <option>Presencial</option>
               <option>Virtual</option>
               <option>Hibrida</option>
@@ -127,7 +130,7 @@ function UploadData(props) {
 
         <Row className="mb-3">
           <Form.Group as={Col} controlId="max">
-            <Form.Label className="flTxt">Capacidad</Form.Label>
+            <Form.Label className="flTxt">Capacidad Max</Form.Label>
             <Form.Control placeholder="15 - 30" onChange={(event) => {setCapacity(event.target.value)}} />
           </Form.Group>
 
@@ -149,7 +152,7 @@ function UploadData(props) {
 
         <Form.Group className="mb-3" controlId="incluye">
           <Form.Label className="flTxt">Incluye:</Form.Label>
-          <Form.Control onChange={(event) => {setIncluye(event.target.value)}} placeholder="Incluye Kit personalizado, Servicio de parqueadero y acompañamiento" />
+          <Form.Control onChange={(event) => {setIncluye(event.target.value)}} placeholder="50g de té, 2 infusores bola, 1 cuchara medidora, 2 cuencos de cristal, plegable informativo y envio nacional." />
         </Form.Group>
 
         <InputGroup className="mb-3">

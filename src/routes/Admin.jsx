@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import imagenFondo from "../images/fondoPostulacion.jpg";
+import imagenBox from "../images/imagen-fondo-proveedor.png";
+import imagenLog from "../images/adBg.jpg";
 import { useEffect, useState } from "react";
 import { storage, auth } from "../firebase/firebase";
 import { ref, uploadBytes,getDownloadURL} from "firebase/storage";
@@ -41,7 +43,7 @@ function Admin() {
     2: login completo
     3: No hay nadie logeado
     */
-    const [state, setCurrentState] = useState(0);
+  const [state, setCurrentState] = useState(0);
 
   async function handleOnCLickLogin(){
     const googleProvider = new GoogleAuthProvider();
@@ -163,14 +165,55 @@ function Admin() {
     }
   };
 
+  const containerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    backgroundImage: `url(${imagenLog})`,
+    backgroundSize: 'cover',
+  };
+
+  const frameStyle = {
+    background: `url(${imagenBox}) no-repeat center center`,
+    backgroundSize: 'cover',
+    padding: '80px',
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
+    borderRadius: '10px',
+    textAlign: 'center',
+    color: '#fff',
+  };
+
   if(state === 0){
-    return(<div><Button onClick={handleOnCLickLogin}>Login</Button></div>);
+    return(
+      <div style={containerStyle}>
+        <div style={frameStyle}>
+          <div>
+            <Button type="button "class="btn btn-light" onClick={handleOnCLickLogin}>Login</Button>
+          </div>
+        </div>
+      </div>
+    );
   }
   if(state === 1){
-    return(<div>Esta Autenticado pero no registrado</div>);
+    return(
+      <div className='logBack'>
+        <div className='logBox'>
+          <div> Se encuentra autenticado pero no registrado </div>
+        </div>
+      </div>
+    );
   }
   if(state === 3){
-    return(<div><Button onClick={handleOnCLickLogin}>Login</Button></div>);
+    return(
+      <div style={containerStyle}>
+        <div style={frameStyle}>
+          <div>
+          <Button type="button "class="btn btn-light" onClick={handleOnCLickLogin}>Login</Button>
+          </div>
+        </div>
+      </div>
+    );
   }
   if(state === 2){
     return (
@@ -181,6 +224,15 @@ function Admin() {
           <Button variant="warning" onClick={callAllItems}>
             Importar proveedores
           </Button>
+          <Button variant="light" onClick={retrocedeItem} style={{marginLeft:"20vw"}}>
+            Anterior
+          </Button>
+          <Button variant="light" onClick={asignarValoresALabels} style={{marginLeft:"1vw"}}>
+            Ver postulacion: {itemIndex + 1}
+          </Button>
+          <Button variant="light" onClick={avanzarItem} style={{marginLeft:"1vw"}}>
+            Siguiente
+          </Button>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="titulo">
               <Form.Label className="flTxt">Titulo:</Form.Label>
@@ -190,6 +242,8 @@ function Admin() {
             <Form.Group as={Col} controlId="ciudad">
               <Form.Label className="flTxt">Ciudad:</Form.Label>
               <Form.Select onChange={(event) => {setCiudad(event.target.value)}} value={ciudad}>
+                <option>Seleccionar...</option>
+                <option>Todas</option>
                 <option>Bogota</option>
                 <option>Medellin</option>
               </Form.Select>
@@ -200,7 +254,8 @@ function Admin() {
             <Form.Group as={Col} controlId="clase">
               <Form.Label className="flTxt"> Clase:</Form.Label>
               <Form.Select onChange={(event) => {setClase(event.target.value)}} value={clase}>
-                <option>Restaurante</option>
+                <option>Seleccionar...</option>
+                <option>Restaurantes</option>
                 <option>Cata</option>
                 <option>Taller de Cocina</option>
                 <option>MasterClass</option>
@@ -213,6 +268,7 @@ function Admin() {
             <Form.Group as={Col} controlId="tipo">
               <Form.Label className="flTxt">Modalidad:</Form.Label>
               <Form.Select onChange={(event) => {setModality(event.target.value)}} value={modality}>
+                <option>Seleccionar...</option>
                 <option>Presencial</option>
                 <option>Virtual</option>
                 <option>Hibrida</option>
@@ -271,17 +327,8 @@ function Admin() {
           <Button variant="success" type="submit">
             Aceptar
           </Button>
-          <Button variant="danger" onClick={deleteDocument}>
+          <Button variant="danger" onClick={deleteDocument} style={{marginLeft:"2vw"}}>
             Rechazar
-          </Button>
-          <Button variant="info" onClick={retrocedeItem}>
-            Anterior
-          </Button>
-          <Button variant="info" onClick={avanzarItem}>
-            Siguiente
-          </Button>
-          <Button variant="info" onClick={asignarValoresALabels}>
-            Ver postulacion: {itemIndex + 1}
           </Button>
         </Form>
         </div>
