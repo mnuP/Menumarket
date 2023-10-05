@@ -8,10 +8,12 @@ import { signInWithEmailAndPassword } from "firebase/auth";
     
 export const InvoicePage = (props) => {
   const [quantity, setQuantity] = useState(1);
+  const [numeroFactura, setNumeroFactura] = useState(localStorage.getItem('numeroFactura'));
   const location = useLocation();
   console.log(location);
   const price = location.state.itemPass.price;
   let date = new Date().toUTCString().slice(5, 16);
+  
 
 
   const handleQTChange = (event) => {
@@ -23,6 +25,12 @@ export const InvoicePage = (props) => {
 
   function printCotizacion(){
     window.print();
+    const numeroActual = localStorage.getItem('numeroFactura');
+
+    const nuevoNumero = numeroActual ? parseInt(numeroActual) + 1 : 1;
+
+    setNumeroFactura(nuevoNumero);
+    localStorage.setItem('numeroFactura', nuevoNumero.toString());
   };
 
   return( 
@@ -44,7 +52,7 @@ export const InvoicePage = (props) => {
                                 <p><span className = "text-bold">Fecha</span>: {date}</p>
                             </div>
                             <div className = "invoice-head-middle-right text-end">
-                                <p><spanf className = "text-bold">Cotizacion No:</spanf>16789</p>
+                                <p><spanf className = "text-bold">Cotizacion No:</spanf>{numeroFactura}</p>
                             </div>
                         </div>
                         <div className = "hr"></div>
