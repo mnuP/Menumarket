@@ -71,9 +71,9 @@ export default function AllyProfile(props) {
               aria-labelledby={`offcanvasNavbarLabel-expand-md`}
               placement="end"
             >
-              <Offcanvas.Body>
+              <Offcanvas.Body style={{display: 'flex', justifyContent: 'flex-end'}}>
                 <Form className="d-flex">
-                  <Button key="ButtonExit" onClick={doExit} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Volver</Button>
+                  <Button key="ButtonExit" onClick={doExit} style={{height: "46px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Volver</Button>
                   <Button key="ButtonGo" onClick={doGoUpload} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>!Postula Tu Experiencia¡</Button>
                 </Form>
               </Offcanvas.Body>
