@@ -95,9 +95,9 @@ export default function Navigation() {
           <Container fluid>
             <Navbar.Brand style={{width:"15vw", marginRight:"5vw"}} href="#">
               <img
-                src="https://menumarket.co/wp-content/uploads/2022/03/menu-logo.png"
-                width="100%"
-                height="100%"
+                src="https://firebasestorage.googleapis.com/v0/b/menumarket-b8993.appspot.com/o/logoRes.png?alt=media&token=c6553309-8232-4f92-a931-646bb48e878d&_gl=1*1w6iweb*_ga*MTg0NTk2OTc1NS4xNjkzNDUxNTQ1*_ga_CW55HF8NVT*MTY5NjYwMzMzMi40MC4xLjE2OTY2MDM0NDAuMTIuMC4w"
+                width="50px"
+                height="50px"
                 className="d-inline-block align-top"
                 alt="React Bootstrap logo"
               />

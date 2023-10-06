@@ -4,6 +4,18 @@
   flex-direction: row;
   justify-content: center;
   width: 100vw;
+  font-family: 'Walkway Bold', sans-serif;
+}
+
+@font-face {
+  font-family: 'Walkway Bold';
+  src: url('./fonts/Walkway-Bold.ttf') format('truetype'); 
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Walkway Bold', sans-serif;
 }
 
 .desktop .div {
@@ -31,8 +43,8 @@
 
 .desktop .text-wrapper {
   color: #d5c25d;
-  font-family: "Lalezar-Regular", Helvetica;
-  font-size: 30px;
+  font-family: 'Walkway Bold', sans-serif;
+  font-size: 40px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
@@ -64,8 +76,8 @@
   all: unset;
   box-sizing: border-box;
   color: #ccd787;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 18px;
+  font-family: 'Walkway Bold', sans-serif;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
@@ -101,9 +113,9 @@
 
 .desktop .titulo-experiencia {
   color: #ffffff;
-  font-family: "Inter-Medium", Helvetica;
-  font-size: 18px;
-  font-weight: 500;
+  font-family: 'Walkway Bold', sans-serif;
+  font-weight: 300;
+  font-size: 34px;
   left: 53px;
   letter-spacing: 0;
   line-height: normal;
@@ -134,9 +146,9 @@
 .desktop .text-wrapper-2 {
   align-self: stretch;
   color: #000000;
-  font-family: "Inter-SemiBold", Helvetica;
+  font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;;
+  font-weight: 300;
   font-size: 18px;
-  font-weight: 600;
   letter-spacing: 0;
   line-height: 20px;
   margin-top: -1px;
@@ -158,29 +170,31 @@
   position: absolute;
   top: 484px;
   width: 34px;
+  display: none;
 }
 
 .desktop .formkit-time {
   height: 34px;
   left: 126px;
   position: absolute;
-  top: 544px;
+  top: 519px;
   width: 34px;
+  
 }
 
 .desktop .codicon-settings {
   height: 34px;
   left: 126px;
   position: absolute;
-  top: 604px;
+  top: 614px;
   width: 34px;
 }
 
 .desktop .texto-experiencia {
   color: #000000;
-  font-family: "Inter-Medium", Helvetica;
+  font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;;
+  font-weight: 300;
   font-size: 18px;
-  font-weight: 500;
   letter-spacing: 0;
   line-height: 22px;
   position: absolute;
@@ -214,7 +228,7 @@
 
 .desktop .p {
   color: #000000;
-  font-family: "Inter-Medium", Helvetica;
+  font-family: 'Walkway Bold', sans-serif;
   font-size: 32px;
   font-weight: 500;
   letter-spacing: 0;
@@ -293,7 +307,6 @@
 
 
 @media (max-width: 1000px){
-  
   .fondo-p .horizontal-p {
     display: none;
   }
@@ -325,7 +338,6 @@
 }
 
 @media (min-width: 1000px){
-  
   .fondo-p .form-p {
     left: 400px;
   }
@@ -373,7 +385,7 @@
 
 .fondo-p .se-parte-de {
   color: #ffffff;
-  font-family: "Kameron-Regular", Helvetica;
+  font-family: 'Walkway Bold', sans-serif;
   font-size: 40px;
   font-weight: 400;
   height: 260px;

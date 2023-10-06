@@ -8,7 +8,9 @@ import { signInWithEmailAndPassword } from "firebase/auth";
     
 export const InvoicePage = (props) => {
   const [quantity, setQuantity] = useState(1);
-  const [numeroFactura, setNumeroFactura] = useState(localStorage.getItem('numeroFactura'));
+  const [numeroFactura, setNumeroFactura] = useState(localStorage.getItem('numeroFactura')
+  
+  );
   const location = useLocation();
   console.log(location);
   const price = location.state.itemPass.price;
