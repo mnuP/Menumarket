@@ -4,12 +4,11 @@ import Row from 'react-bootstrap/Row';
 import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import style from"../filter.module.css";
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from "react";
 import { db, getTodosCard } from '../firebase/firebase'
 import { onSnapshot, collection} from "firebase/firestore";
-import "../styleForm.css";
+import style from "../styleForm.css";
 import $ from 'jquery';
 import Form from 'react-bootstrap/Form';
 import Offcanvas from 'react-bootstrap/Offcanvas';

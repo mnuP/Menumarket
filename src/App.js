@@ -1,4 +1,3 @@
-import Navigation from './routes/Navigation';
 import Items from './routes/Items';
 import Footer from './routes/Footer';
 import "./style.css";
