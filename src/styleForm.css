@@ -5,7 +5,7 @@
     --mainColorBlack: #1e1e1c;
     --textColor: #1e1e1c;
     --textColorWhite: #ffffff;
-    --backgroundColor: grey;
+    --backgroundColor: #F8F8F8;
 }
 
 /* NAVBAR */
@@ -667,7 +667,6 @@ select {
 }
 
 
-
 /* RELOAD PAGE */
 .spinner {
   width: 64px;
@@ -684,5 +683,25 @@ select {
   }
   100% {
       transform: rotate(360deg);
+  }
+}
+
+.itemsPage {
+  background-color: var(--backgroundColor);
+  width: 100vw;
+  padding: 1vw ;
+}
+
+.ItemsInside {
+  padding: 1vh 2vw;
+}
+
+.cards {
+  &:hover{
+    box-shadow: 0 0 1em 0 var(--mainColor2);  
+    border: 0.5em solid var(--mainColor2);
+    border-radius: 1em;
+    color: var(--mainColor2);
+    transition: 0.3s;
   }
 }
