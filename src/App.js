@@ -1,5 +1,4 @@
 import Items from './routes/Items';
-import Footer from './routes/Footer';
 import "./style.css";
 import { useState } from "react";
 
@@ -11,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <Items/>
-      <Footer/>
     </div>
   );
 }
