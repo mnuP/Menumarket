@@ -42,14 +42,6 @@ export default function Navigation() {
     }
 
     async function handleOnClickNP(){
-      /*if(currentUser){
-          navigate("/Upload");
-      }else{
-        doAuthenticate();
-        if(currentUser){
-          navigate("/Upload");
-        }
-      }*/
       doAuthenticate();
     }
 
@@ -85,12 +77,12 @@ export default function Navigation() {
     };
 
   //-------------------------Autehntication--END-------------------//
-  //-------------------------DATABASE--------START-----------------//
+
   function refreshPage() {
     window.location.reload(false);
   }
 
-  //-------------------------DATABASE--------END-------------------//
+  
 
   return (
     <>

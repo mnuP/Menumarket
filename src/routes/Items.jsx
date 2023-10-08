@@ -93,7 +93,7 @@ function Items({ query }) {
     window.location.reload(false);
   }
 
-  const tipos = ["Cata", "Catering", "Chef en Casa", "Master Class",   "Regalos Corporativos", "Restaurantes", "Taller de Cocina"];
+  const tipos = ["Cata", "Catering", "Chef en Casa", "Master Class",   "Regalos Corporativos", "Restaurantes", "Taller de Cocina", "Destacados de Temporada"];
   const ciudad = ["Bogota", "Medellin"];
   const modalidad = ["Presencial", "Virtual", "Hibrida"];
   const collectionRef = collection(db, "usersPrincipal");
@@ -192,9 +192,9 @@ function Items({ query }) {
             >
               <Offcanvas.Body>
                 <Form className="d-flex">
-                  <div class="box">
-                    <form class="search">
-                        <input type="text" class="input" name="txt"  onChange={handleChange}
+                  <div className="boxX">
+                    <form className="searchBar">
+                        <input type="text" className="input" name="txt"  onChange={handleChange} style={{fontFamily:"'Montserrat',Helvetica,Arial,Lucida,sans-serif"}}
                         value={search}/>
                     </form>
                     <i class="fas fa-search"></i>

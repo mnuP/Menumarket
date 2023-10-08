@@ -23,6 +23,7 @@ export default function AllyProfile(props) {
     const itemPass = location.state.userUID;
     const [items, setItems] = useState([]);
     const collectionRef = collection(db, "usersPrincipal");
+    const [admin, setAdmin] = useState("none");
 
     const navigate = useNavigate();  
 
@@ -32,6 +33,10 @@ export default function AllyProfile(props) {
 
     function doExit(){
         navigate(-1);
+    };
+
+    function doManage(){
+      navigate("/CFSHEBCH7/Admin");
     };
   
     function refreshPage() {
@@ -46,6 +51,10 @@ export default function AllyProfile(props) {
             });
             let itemsFiltrados = items.filter((item) => {return item.user === itemPass;})
             setItems(itemsFiltrados);
+
+            if(itemPass === "8b2SM94eisS6EQHS2MTq8WBWdab2"){
+              setAdmin("");
+            };
         });
         return () => {
             dataTest();
@@ -75,6 +84,7 @@ export default function AllyProfile(props) {
                 <Form className="d-flex">
                   <Button key="ButtonExit" onClick={doExit} style={{height: "46px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Volver</Button>
                   <Button key="ButtonGo" onClick={doGoUpload} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>!Postula Tu Experiencia¡</Button>
+                  <Button key="ButtonAd" onClick={doManage} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888", display: admin}}>Administrar Postulaciones</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
@@ -90,7 +100,6 @@ export default function AllyProfile(props) {
                             <Card.Body>
                                 <Card.Title key={item.title}>{item.title}</Card.Title>
                                 <Card.Text key={item.description}>
-                                    {item.description}
                                     <div className="vr"></div>
 
                                     {item.class}

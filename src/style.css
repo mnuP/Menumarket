@@ -192,7 +192,7 @@ body {
 
 .desktop .texto-experiencia {
   color: #000000;
-  font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;;
+  font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
   font-weight: 300;
   font-size: 18px;
   letter-spacing: 0;
@@ -405,3 +405,4 @@ body {
   top: 70px;
   background-image: url("./images/imagen-fondo-proveedor.png");
 }
+
