@@ -15,9 +15,11 @@ export default function Footer() {
             <h5 className='text-uppercase'>Footer text</h5>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias.
-              Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam,
-              est atque cumque eum delectus sint!
+            «No encontramos clientes para nuestras experiencias, encontramos experiencias para nuestros clientes»
+            <br></br>
+            ¡La diversión está servida!
+            <br></br>
+            atencionalcliente@menumarket.co
             </p>
           </MDBCol>
 
