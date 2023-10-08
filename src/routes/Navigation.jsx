@@ -13,6 +13,7 @@ import nullImage from "../images/nullPP.png";
 
 
 
+
 export default function Navigation() {
 
     //-------------------------Autehntication--START-----------------//
@@ -21,6 +22,10 @@ export default function Navigation() {
     const [userUID, setCurrentUID] = useState("");
     const [outButt, setOutButt] = useState("none");
     const [singButt, setSingButt] = useState("Iniciar Sesion");
+
+    const [search, setSearch] = useState("");
+
+
     console.log(outButt);
 
     useEffect(() =>{
@@ -35,7 +40,6 @@ export default function Navigation() {
             setSingButt("Perfil");
         }
     }
-
 
     async function handleOnClickNP(){
       /*if(currentUser){
@@ -64,7 +68,6 @@ export default function Navigation() {
       }
       refreshPage();
     }
-
 
     async function doLogout() {
       await logout();
@@ -110,14 +113,7 @@ export default function Navigation() {
             >
               <Offcanvas.Body>
                 <Form className="d-flex">
-                  <Form.Control style={{width:"60vw"}}
-                    type="search"
-                    placeholder="Buscar Eventos"
-                    className="me-5"
-                    aria-label="Search"
-                    size="sm"
-                  />
-                  <Button key="ButtonAuth" onClick={handleOnClickNP} style={{width: "46px",borderRadius: "50%",height: "46px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888",display: "flex",justifyContent: "center",alignItems: "center"}}className="ButtonName"variant="outline-success">
+                    <Button key="ButtonAuth" onClick={handleOnClickNP} style={{width: "46px",borderRadius: "50%",height: "46px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888",display: "flex",justifyContent: "center",alignItems: "center"}}className="ButtonName"variant="outline-success">
                     {currentUser ? (
                       <img src={currentUser.photoURL} alt="User Profile" style={{width: "40px",borderRadius: "50%",height: "40px",}}/>
                       ) : (
