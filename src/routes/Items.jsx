@@ -263,13 +263,13 @@ function Items({ query }) {
               placement="end"
             >
               <Offcanvas.Body>
-                <nav className="navbar2">
+                <nav className='centerNav'>
                   <div className="container" >
                     <div className={`nav-elements  ${showNavbar && "active"}`} fluid>
 
                       {/* Ciudad */}
                       <ul>
-                        <li>
+                        <li className={`botonesUnicoFiltro`}>
                           <select key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
                             <option id="none" value="none" selected hidden>Ciudad</option>
                             {ciudad.map((item) => (
@@ -282,8 +282,8 @@ function Items({ query }) {
 
 
                         {/* Modalidad */}
-                        <li>
-                          <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad">
+                        <li  className={`botonesUnicoFiltro`}>
+                          <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad" >
                             <option value="none" selected  hidden>Modalidad</option>
                             {modalidad.map((item) => (
                               <>
@@ -384,7 +384,7 @@ function Items({ query }) {
 
                       {/* Ciudad */}
                       <ul>
-                        <li>
+                        <li className={`botonesUnicoFiltro`}>
                           <select key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
                             <option id="none" value="none" selected hidden>Ciudad</option>
                             {ciudad.map((item) => (
@@ -397,8 +397,8 @@ function Items({ query }) {
 
 
                         {/* Modalidad */}
-                        <li>
-                          <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad">
+                        <li  className={`botonesUnicoFiltro`}>
+                          <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad" >
                             <option value="none" selected  hidden>Modalidad</option>
                             {modalidad.map((item) => (
                               <>
@@ -422,6 +422,7 @@ function Items({ query }) {
                         <li onClick={(e) => resetFiltro()} key="reset" id={`dropdown-split-variants-reset`} title="reset" variant = "reset" className='botonReset'>
                           Todos
                         </li>
+                        <li></li>
                       </ul>
                     </div>
                   </div>

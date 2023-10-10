@@ -16,15 +16,20 @@
 /* NAVBAR */
 .principalNavbar {
   background-image: url("/Users/jorgeanaya/Documents/Git/Menumarket/src/images/imagen-fondo-proveedor.png");
-  font-size: 11px;
+  font-size: 14px;
+}
+
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 3rem;
 }
 
 .navbarMain {
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .navbarMain2 {
-  font-size: 11px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -330,7 +335,9 @@
 
 .mb-3 {
   padding: 1vh;
-  text-align: left;
+  text-align: left;    
+  margin-bottom: 0rem !important;
+
 }
 
 /* Search Bar*/
@@ -340,7 +347,8 @@
 
 .input {
     padding: 10px;
-    width: 50vw;
+    max-width: 60vw;
+    min-width: 40vw;
     height: 3vh;
     background: none;
     border: 2px solid var(--mainColor);
@@ -351,7 +359,8 @@
     transition: .5s;
 }
 .box:hover input{
-    width: 50vw;
+   max-width: 60vw;
+   min-width: 40vw;
     background: #3b3640;
     border-radius: 10px;
     border: 2px solid var(--mainColor2);
@@ -437,20 +446,16 @@
 /*Ciudad y Modalidad*/
 select {
   text-align: center;
-  border-radius: 1rem;
   appearance: none;
   font: inherit;
-  padding: 0.5rem;
   color: var(--mainColor);
   background-color: var(--mainColorBlack);
-  border: 0.2em solid var(--mainColor);
+  border: 0 solid var(--mainColor);
   &:focus {
     outline: none;
   }
   &:hover{
-    box-shadow: 0 0 1em 0 var(--mainColor2);  
     background-color: var(--mainColorBlack);
-    border: 0.2em solid var(--mainColor2);
     color: var(--mainColor2);
   }
 }
@@ -665,8 +670,7 @@ select {
   .nav-elements {
     position: absolute;
     right: 0;
-    top: 60px;
-    background-color: var(--mainColor2);
+    top: 20px;
     width: 0px;
     transition: all ease-in;
     overflow: hidden;
@@ -679,12 +683,11 @@ select {
   .nav-elements ul {
     display: flex;
     flex-direction: column;
-    text-align: left;
   }
 
   .nav-elements ul li {
     margin-right: unset;
-    margin-top: 22px;
+    margin: 10px;
   }
 }
 
@@ -694,6 +697,10 @@ select {
   text-align: center;
 }
 
+.offcanvas.offcanvas-end {
+  width: 0px;
+
+}
 
 @media (max-width: 1000px){
   .desktop .proveedor {
@@ -812,6 +819,6 @@ select {
 }
 
 .nav-elements ul li:not(:last-child) {
-    margin-right: 1vw;
-    margin-left: 1vw;
+  margin-right: 1vw;
+  margin-left: 1vw;
 }
