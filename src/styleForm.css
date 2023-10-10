@@ -8,16 +8,25 @@
     --backgroundColor: #F8F8F8;
 }
 
+* {
+  font-family: 'Walkway Bold';
+  src: url('./fonts/Walkway-Bold.ttf') format('truetype');  
+}
+
 /* NAVBAR */
+.principalNavbar {
+  background-image: url("/Users/jorgeanaya/Documents/Git/Menumarket/src/images/imagen-fondo-proveedor.png");
+  font-size: 11px;
+}
+
 .navbarMain {
-    background-color: var(--mainColorBlack);
+  font-size: 11px;
 }
 
 .navbarMain-logo {
     width:15vw;
     margin-right:5vw;
 }
-
 
 /* MAIN */
 .desktop {
@@ -35,11 +44,7 @@
     font-weight: bold;
     font-style: normal;
   }
-  
-  body {
-    font-family: 'Walkway Bold', sans-serif;
-  }
-  
+
   .desktop .div {
     background-color: #ffffff;
     position: relative;
@@ -436,7 +441,7 @@
 
 /* Search Bar*/
 .box{
-    position: relative;
+  position: relative;
 }
 
 .input {
@@ -501,7 +506,8 @@
 
 #ButonGO {
     height: 46px;
-    margin-left: 10px;
+    margin-left: 10px;    
+    font-size: 1em;
     background-color: var(--mainColorBlack);
     border: 0.2em solid var(--mainColor);
     color: var(--mainColor);
@@ -516,6 +522,7 @@
 #ButtonLog {
     height: 46px;
     margin-left: 10px;
+    font-size: 1em;
     background-color: var(--mainColorBlack);
     border: 0.2em solid var(--mainColor);
     color: var(--mainColor);
@@ -529,8 +536,7 @@
 
 /* NAVBAR FILTROS */
 #navbar-filtros{
-  padding: 1vw 2vw;
-  background-color: var(--mainColorBlack);
+  padding: 2vw 2vw;
 }
 
 
@@ -569,6 +575,8 @@ select {
   color: var(--mainColor);
   background-color: var(--mainColorBlack);
   border: 0.2em solid var(--mainColor);
+  display: inline-block;
+
   &:hover{
     box-shadow: 0 0 1em 0 var(--mainColor2);  
     background-color: var(--mainColorBlack);
@@ -687,7 +695,6 @@ select {
 }
 
 .itemsPage {
-  background-color: var(--backgroundColor);
   width: 100vw;
   padding: 1vw ;
 }
@@ -704,4 +711,8 @@ select {
     color: var(--mainColor2);
     transition: 0.3s;
   }
+}
+
+.backgroundWhite {
+  background-image: url("/Users/jorgeanaya/Documents/Git/Menumarket/src/images/whiteBG.png");
 }
