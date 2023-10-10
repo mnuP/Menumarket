@@ -182,6 +182,9 @@ function Items({ query }) {
     }, 1500);
   };
 
+
+  const [showNavbar, setShowNavbar] = useState(true)
+
   useEffect(()=> {
     const dataTest =  onSnapshot(collectionRef,(querySnapshot) => {
       const items = [];
@@ -252,54 +255,67 @@ function Items({ query }) {
           </Container>
         </Navbar>
 
-        <Navbar id={"navbar-filtros"}>
-          <Container fluid>
-            {/* Ciudad */}
+        <Navbar key="md" expand="md" className="mb-3 text-dark navbarMain" >
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-md`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+              placement="end"
+            >
+              <Offcanvas.Body>
+                <nav className="navbar2">
+                  <div className="container" >
+                    <div className={`nav-elements  ${showNavbar && "active"}`} fluid>
 
-            <select key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
-              <option id="none" value="none" selected hidden>Ciudad</option>
-              {ciudad.map((item) => (
-                  <>
-                    <option eventKey={item} key={item}>{item}</option>
-                  </>
-              ))}
-            </select>
+                      {/* Ciudad */}
+                      <ul>
+                        <li>
+                          <select key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
+                            <option id="none" value="none" selected hidden>Ciudad</option>
+                            {ciudad.map((item) => (
+                              <>
+                                <option eventKey={item} key={item}>{item}</option>
+                              </>
+                            ))}
+                          </select>
+                        </li>
 
-            <div className="vr"></div>
 
-            {/* Modalidad */}
-            <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad">
-              <option value="none" selected  hidden>Modalidad</option>
-              {modalidad.map((item) => (
-                  <>
-                    <option eventKey={item} key={item}>{item}</option>
-                  </>
-              ))}
-            </select>
+                        {/* Modalidad */}
+                        <li>
+                          <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad">
+                            <option value="none" selected  hidden>Modalidad</option>
+                            {modalidad.map((item) => (
+                              <>
+                                <option eventKey={item} key={item}>{item}</option>
+                              </>
+                            ))}
+                          </select>
+                        </li>
 
-            <div className="vr"></div>
+                        {tipos.map((item) => (
+                          <li onClick={(e) => {handleFilterButtonClick(e.target.title); handleClick(e)}} key={item} id={`dropdown-split-variants-${item}`} title={item} variant = {item} className={`botonesUnicoFiltro`}>
+                            {item}
+                          </li>
+                          ),
+                        )}
 
-            {/* Tipo */}
-            {tipos.map((item) => (
-              <Button onClick={(e) => {handleFilterButtonClick(e.target.title); handleClick(e.target.title)}} key={item} id={`dropdown-split-variants-${item}`} title={item} variant = {item} className={`botonesUnicoFiltro`}>
-                {item}
-              </Button>
-              ),
-            )}
+                        <li onClick={(e) => { applyFiltro(selectedFilters); }} key="apply" id={`dropdown-split-variants-apply`} title="apply" variant = "apply" className='botonSeleccion'>
+                          Seleccionados
+                        </li>
 
-            <div className="vr"></div>
-
-            <Button onClick={(e) => { applyFiltro(selectedFilters); }} key="apply" id={`dropdown-split-variants-apply`} title="apply" variant = "apply" className='botonSeleccion'>
-              Seleccionados
-            </Button>
-
-            <Button onClick={(e) => resetFiltro()} key="reset" id={`dropdown-split-variants-reset`} title="reset" variant = "reset" className='botonReset'>
-              Todos
-            </Button>
-
-          </Container>
-        </Navbar>
+                        <li onClick={(e) => resetFiltro()} key="reset" id={`dropdown-split-variants-reset`} title="reset" variant = "reset" className='botonReset'>
+                          Todos
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Navbar>
         </div>
+        
 
         <div className="loader-container">
           <div className="spinner"></div>
@@ -354,52 +370,64 @@ function Items({ query }) {
               </Container>
             </Navbar>
 
-          <Navbar id={"navbar-filtros"}>
-            <Container fluid>
-              {/* Ciudad */}
+          <Navbar key="md" expand="md" className="mb-3 text-dark navbarMain" >
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-md`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+              placement="end"
+            >
+              <Offcanvas.Body>
+                <nav className='centerNav'>
+                  <div className="container" >
+                    <div className={`nav-elements  ${showNavbar && "active"}`} fluid>
 
-              <select key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
-                <option id="none" value="none" selected hidden>Ciudad</option>
-                {ciudad.map((item) => (
-                    <>
-                      <option eventKey={item} key={item}>{item}</option>
-                    </>
-                ))}
-              </select>
+                      {/* Ciudad */}
+                      <ul>
+                        <li>
+                          <select key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
+                            <option id="none" value="none" selected hidden>Ciudad</option>
+                            {ciudad.map((item) => (
+                              <>
+                                <option eventKey={item} key={item}>{item}</option>
+                              </>
+                            ))}
+                          </select>
+                        </li>
 
-              <div className="vr"></div>
 
-              {/* Modalidad */}
-              <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad">
-                <option value="none" selected  hidden>Modalidad</option>
-                {modalidad.map((item) => (
-                    <>
-                      <option eventKey={item} key={item}>{item}</option>
-                    </>
-                ))}
-              </select>
+                        {/* Modalidad */}
+                        <li>
+                          <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad">
+                            <option value="none" selected  hidden>Modalidad</option>
+                            {modalidad.map((item) => (
+                              <>
+                                <option eventKey={item} key={item}>{item}</option>
+                              </>
+                            ))}
+                          </select>
+                        </li>
 
-              <div className="vr"></div>
+                        {tipos.map((item) => (
+                          <li onClick={(e) => {handleFilterButtonClick(e.target.title); handleClick(e)}} key={item} id={`dropdown-split-variants-${item}`} title={item} variant = {item} className={`botonesUnicoFiltro`}>
+                            {item}
+                          </li>
+                          ),
+                        )}
 
-              {/* Tipo */}
-              {tipos.map((item) => (
-                <Button onClick={(e) => {handleFilterButtonClick(e.target.title); handleClick(e)}} key={item} id={`dropdown-split-variants-${item}`} title={item} variant = {item} className={`botonesUnicoFiltro`}>
-                  {item}
-                </Button>
-                ),
-              )}
+                        <li onClick={(e) => { applyFiltro(selectedFilters); }} key="apply" id={`dropdown-split-variants-apply`} title="apply" variant = "apply" className='botonSeleccion'>
+                          Seleccionados
+                        </li>
 
-              <div className="vr"></div>
-
-              <Button onClick={(e) => { applyFiltro(selectedFilters); }} key="apply" id={`dropdown-split-variants-apply`} title="apply" variant = "apply" className='botonSeleccion'>
-                Seleccionados
-              </Button>
-
-              <Button onClick={(e) => resetFiltro()} key="reset" id={`dropdown-split-variants-reset`} title="reset" variant = "reset" className='botonReset'>
-                Todos
-              </Button>
-
-            </Container>
+                        <li onClick={(e) => resetFiltro()} key="reset" id={`dropdown-split-variants-reset`} title="reset" variant = "reset" className='botonReset'>
+                          Todos
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
           </Navbar>
           
           <div className='backgroundWhite'>

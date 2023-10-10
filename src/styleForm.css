@@ -23,6 +23,15 @@
   font-size: 11px;
 }
 
+.navbarMain2 {
+  font-size: 11px;
+  text-align: center;
+}
+
+.centerNav {
+  text-align: center;
+}
+
 .navbarMain-logo {
     width:15vw;
     margin-right:5vw;
@@ -281,122 +290,6 @@
     position: relative;
   }
   
-  @media (max-width: 1500px){
-    .desktop .proveedor {
-      display: none;
-    }
-    .desktop .rectangle-2{
-      display: none;
-    }
-    .desktop .texto-experiencia {
-      top: 1097px;
-      left: 10vw;
-      right: 10vw;
-      width: 80vw;
-    }
-    .desktop .imagen-SE{
-      height: 320px;
-      width: 100vw;
-    }
-    .desktop .p {
-      display: none;
-    }
-    .desktop .overlap {
-      top: 700px;
-    }
-    .desktop .div{
-      height: 1500px;
-    }
-  }
-  
-  @media (min-width: 1500px){
-    .desktop .div{
-      height: 2000px;
-    }
-    .desktop .texto-experiencia {
-      top: 997px;
-      right: 15vw;
-    }
-    .desktop .p {
-      right: 15vw;
-    }
-    .desktop .overlap {
-      top: 838px;
-      left: 15vw;
-    }
-    .desktop .imagen-SE{
-      height: 420px;
-    }
-    .desktop .imagen-SE{
-      width: 420px;
-    }
-  }
-  
-  
-  @media (max-width: 1000px){
-    .fondo-p .horizontal-p {
-      display: none;
-    }
-    .fondo-p .se-parte-de {
-      display: none;
-    }
-    .desktop .text-wrapper {
-      left: 10vw;
-    }
-    .desktop .button {
-      left: 10vw;
-    }
-    .desktop .informacion-basica {
-      left: 14vw;
-    }
-    .desktop .pepicons-pencil {
-      left: 6vw;
-    }
-    .desktop .octicon-person {
-      left: 6vw;
-    }
-    .desktop .formkit-time {
-      left: 6vw;
-    }
-    .desktop .codicon-settings {
-      left: 6vw;
-    }
-  
-  }
-  
-  @media (min-width: 1000px){
-    .fondo-p .form-p {
-      left: 400px;
-    }
-    .desktop .text-wrapper {
-      left: 15vw;
-    }
-    .desktop .button {
-      left: 15vw;
-    }
-    .desktop .proveedor {
-      right: 15vw;
-    }
-    .desktop .informacion-basica {
-      left: 18vw;
-    }
-    .desktop .pepicons-pencil {
-      left: 14vw;
-    }
-    
-    .desktop .octicon-person {
-      left: 14vw;
-    }
-    
-    .desktop .formkit-time {
-      left: 14vw;
-    }
-    
-    .desktop .codicon-settings {
-      left: 14vw;
-    }
-  }
-  
   .fondo-p .horizontal-p {
     align-items: center;
     background-color: #d5c25dcc;
@@ -436,7 +329,8 @@
 }
 
 .mb-3 {
-  margin: 0px !important;
+  padding: 1vh;
+  text-align: left;
 }
 
 /* Search Bar*/
@@ -546,7 +440,6 @@ select {
   border-radius: 1rem;
   appearance: none;
   font: inherit;
-  width: 6vw;
   padding: 0.5rem;
   color: var(--mainColor);
   background-color: var(--mainColorBlack);
@@ -564,13 +457,13 @@ select {
 
 .vr{
   color: var(--mainColor);
+  margin: 0vw 2vw 0vw 1vw;
 } 
 
 /* Otros botones */
 .botonesUnicoFiltro {
   border-radius: 1rem;
   font: inherit;
-  width:7vw;
   padding: 0.5rem;
   color: var(--mainColor);
   background-color: var(--mainColorBlack);
@@ -588,7 +481,6 @@ select {
 .botonSeleccion {
   border-radius: 1rem;
   font: inherit;
-  width: 6vw;
   padding: 0.5rem;
   color: var(--mainColor);
   background-color: var(--mainColorBlack);
@@ -604,7 +496,6 @@ select {
 .botonReset {
   border-radius: 1rem;
   font: inherit;
-  width: 6vw;
   padding: 0.5rem;
   color: var(--mainColor);
   background-color: var(--mainColorBlack);
@@ -715,4 +606,212 @@ select {
 
 .backgroundWhite {
   background-image: url("/Users/jorgeanaya/Documents/Git/Menumarket/src/images/whiteBG.png");
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.nav-elements ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-elements ul li:not(:last-child) {
+  margin-right:1vw;
+}
+
+.nav-elements ul a {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.nav-elements ul a.active {
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-elements ul a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+@media (max-width: 768px) {
+  .nav-elements ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-elements {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: var(--mainColor2);
+    width: 0px;
+    transition: all ease-in;
+    overflow: hidden;
+  }
+
+  .nav-elements.active {
+    width: 270px;
+  }
+
+  .nav-elements ul {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .nav-elements ul li {
+    margin-right: unset;
+    margin-top: 22px;
+  }
+}
+
+.offcanvas-body {
+  margin:0px !important;
+  padding: 0px;
+  text-align: center;
+}
+
+
+@media (max-width: 1000px){
+  .desktop .proveedor {
+    display: none;
+  }
+  .desktop .rectangle-2{
+    display: none;
+  }
+  .desktop .texto-experiencia {
+    top: 1097px;
+    left: 10vw;
+    right: 10vw;
+    width: 80vw;
+  }
+  .desktop .imagen-SE{
+    height: 320px;
+    width: 100vw;
+  }
+  .desktop .p {
+    display: none;
+  }
+  .desktop .overlap {
+    top: 700px;
+  }
+  .desktop .div{
+    height: 1500px;
+  }
+}
+
+@media (min-width: 1500px){
+  .desktop .div{
+    height: 2000px;
+  }
+  .desktop .texto-experiencia {
+    top: 997px;
+    right: 15vw;
+  }
+  .desktop .p {
+    right: 15vw;
+  }
+  .desktop .overlap {
+    top: 838px;
+    left: 15vw;
+  }
+  .desktop .imagen-SE{
+    height: 420px;
+  }
+  .desktop .imagen-SE{
+    width: 420px;
+  }
+}
+
+
+@media (max-width: 1000px){
+  .fondo-p .horizontal-p {
+    display: none;
+  }
+  .fondo-p .se-parte-de {
+    display: none;
+  }
+  .desktop .text-wrapper {
+    left: 10vw;
+  }
+  .desktop .button {
+    left: 10vw;
+  }
+  .desktop .informacion-basica {
+    left: 14vw;
+  }
+  .desktop .pepicons-pencil {
+    left: 6vw;
+  }
+  .desktop .octicon-person {
+    left: 6vw;
+  }
+  .desktop .formkit-time {
+    left: 6vw;
+  }
+  .desktop .codicon-settings {
+    left: 6vw;
+  }
+
+}
+
+@media (min-width: 1000px){
+  .fondo-p .form-p {
+    left: 400px;
+  }
+  .desktop .text-wrapper {
+    left: 15vw;
+  }
+  .desktop .button {
+    left: 15vw;
+  }
+  .desktop .proveedor {
+    right: 15vw;
+  }
+  .desktop .informacion-basica {
+    left: 18vw;
+  }
+  .desktop .pepicons-pencil {
+    left: 14vw;
+  }
+  
+  .desktop .octicon-person {
+    left: 14vw;
+  }
+  
+  .desktop .formkit-time {
+    left: 14vw;
+  }
+  
+  .desktop .codicon-settings {
+    left: 14vw;
+  }
+}
+
+.nav-elements ul li:not(:last-child) {
+    margin-right: 1vw;
+    margin-left: 1vw;
 }
