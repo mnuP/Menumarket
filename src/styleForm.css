@@ -337,7 +337,7 @@ ol, ul, dl {
   padding: 1vh;
   text-align: left;    
   margin-bottom: 0rem !important;
-
+  padding-bottom: 2rem !important;
 }
 
 /* Search Bar*/
@@ -390,9 +390,6 @@ ol, ul, dl {
 }
 
 .ButtonName {
-    width: 46px;
-    border-radius: 50%;
-    height: 46px;
     background-color: var(--textColorWhite);
     border: 0.2em solid var(--mainColor);
     color: var(--mainColor);
@@ -408,22 +405,20 @@ ol, ul, dl {
 }
 
 #ButonGO {
-    height: 46px;
-    margin-left: 10px;    
-    font-size: 1em;
-    background-color: var(--mainColorBlack);
-    border: 0.2em solid var(--mainColor);
-    color: var(--mainColor);
-    &:hover{
-      box-shadow: 0 0 1em 0 var(--mainColor2);  
-      background-color: var(--mainColorBlack);
-      border: 0.2em solid var(--mainColor2);
-      color: var(--mainColor2);
-    }
+margin: 1vh;    
+font-size: 1em;
+background-color: var(--mainColorBlack);
+border: 0.2em solid var(--mainColor);
+color: var(--mainColor);
+&:hover{
+  box-shadow: 0 0 1em 0 var(--mainColor2);  
+  background-color: var(--mainColorBlack);
+  border: 0.2em solid var(--mainColor2);
+  color: var(--mainColor2);
+}
 }
 
 #ButtonLog {
-    height: 46px;
     margin-left: 10px;
     font-size: 1em;
     background-color: var(--mainColorBlack);
@@ -821,4 +816,10 @@ select {
 .nav-elements ul li:not(:last-child) {
   margin-right: 1vw;
   margin-left: 1vw;
+}
+
+.navbarToggle{
+  position: absolute;
+  top: -3vh;
+  right: 3vw;
 }

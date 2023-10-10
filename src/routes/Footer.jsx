@@ -11,9 +11,9 @@ import "../style.css";
 export default function Footer() {
   return (
     <MDBFooter style={{ backgroundColor: '#000000', color:"white"}} className='text-center text-lg-left'>
-      <MDBContainer className='p-4'>
+      <MDBContainer fluid className='p-4'>
         <MDBRow>
-          <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
+          <MDBCol md=''>
             <h5 className='text-uppercase'>¡La diversion esta servida!</h5>
             <img
                 src="https://menumarket.co/wp-content/uploads/2022/03/menu-logo.png"
@@ -22,7 +22,11 @@ export default function Footer() {
               />
           </MDBCol>
 
-          <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
+          <MDBCol md=''>
+          </MDBCol>
+
+
+          <MDBCol md=''>
             <h5 className='text-uppercase'> Contacto</h5>
             <br></br>
             <p >Tel: 573117917370</p>

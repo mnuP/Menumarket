@@ -248,15 +248,15 @@ function Items({ query }) {
 
                   <Button id="ButtonLog" onClick={doLogout}>Cerrar Sesion</Button>
                   </div>
-                  
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
+            
           </Container>
         </Navbar>
 
         <Navbar key="md" expand="md" className="mb-3 text-dark navbarMain" >
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
+          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-md`}
               aria-labelledby={`offcanvasNavbarLabel-expand-md`}
@@ -307,6 +307,7 @@ function Items({ query }) {
                         <li onClick={(e) => resetFiltro()} key="reset" id={`dropdown-split-variants-reset`} title="reset" variant = "reset" className='botonReset'>
                           Todos
                         </li>
+                        <li></li>
                       </ul>
                     </div>
                   </div>
@@ -371,7 +372,7 @@ function Items({ query }) {
             </Navbar>
 
           <Navbar key="md" expand="md" className="mb-3 text-dark navbarMain" >
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} className='navbarToggle'/>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-md`}
               aria-labelledby={`offcanvasNavbarLabel-expand-md`}
@@ -394,7 +395,6 @@ function Items({ query }) {
                             ))}
                           </select>
                         </li>
-
 
                         {/* Modalidad */}
                         <li  className={`botonesUnicoFiltro`}>
