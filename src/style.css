@@ -284,7 +284,7 @@ body {
 
 @media (min-width: 1500px){
   .desktop .div{
-    height: 2000px;
+    height: 1500px;
   }
   .desktop .texto-experiencia {
     top: 997px;
@@ -406,3 +406,7 @@ body {
   background-image: url("./images/imagen-fondo-proveedor.png");
 }
 
+.text-uppercase {
+  color: #d5c25dcc;
+  font-family: 'Walkway Bold', sans-serif;
+}

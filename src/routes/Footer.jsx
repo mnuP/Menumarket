@@ -5,6 +5,8 @@ import {
   MDBCol,
   MDBRow
 } from 'mdb-react-ui-kit';
+import Button from 'react-bootstrap/Button';
+import "../style.css";
 
 export default function Footer() {
   return (
@@ -12,25 +14,19 @@ export default function Footer() {
       <MDBContainer className='p-4'>
         <MDBRow>
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase'>Footer text</h5>
-
-            <p>
-            «No encontramos clientes para nuestras experiencias, encontramos experiencias para nuestros clientes»
-            <br></br>
-            ¡La diversión está servida!
-            <br></br>
-            atencionalcliente@menumarket.co
-            </p>
+            <h5 className='text-uppercase'>¡La diversion esta servida!</h5>
+            <img
+                src="https://menumarket.co/wp-content/uploads/2022/03/menu-logo.png"
+                className="d-inline-block align-top"
+                alt="React Bootstrap logo"
+              />
           </MDBCol>
 
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase'>Footer text</h5>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias.
-              Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam,
-              est atque cumque eum delectus sint!
-            </p>
+            <h5 className='text-uppercase'> Contacto</h5>
+            <br></br>
+            <p >Tel: 573117917370</p>
+            <p >Email: atencionalcliente@menumarket.co</p>
           </MDBCol>
         </MDBRow>
       </MDBContainer>

@@ -5,6 +5,7 @@ import imagenSE from "../images/imagen-SE.png";
 import imagen1 from "../images/imagen-1.png";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
     
 export const AllyView = (props) => {
   const location = useLocation();
@@ -13,6 +14,7 @@ export const AllyView = (props) => {
   const itemPass = location.state.item;
 
   return (
+  <div>
     <div className="desktop">
       <div className="div">
         <div className="overlap-group">
@@ -53,6 +55,8 @@ export const AllyView = (props) => {
         <p className="p">¿Por que esta experiencia es perfecta para ti?</p>
       </div>
     </div>
+    <Footer/>
+  </div>
   );
 };
 

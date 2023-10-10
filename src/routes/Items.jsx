@@ -91,7 +91,7 @@ function Items({ query }) {
     window.location.reload(false);
   }
 
-  const tipos = ["Cata", "Catering", "Chef en Casa", "Master Class",   "Regalos Corporativos", "Restaurantes", "Taller de Cocina", "Destacados de Temporada"];
+  const tipos = ["Cata", "Catering", "Chef en Casa", "Master Class",   "Regalos Corporativos", "Restaurantes", "Taller de Cocina"];
   const ciudad = ["Bogota", "Medellin"];
   const modalidad = ["Presencial", "Virtual", "Hibrida"];
   const collectionRef = collection(db, "usersPrincipal");

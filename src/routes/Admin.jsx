@@ -285,6 +285,7 @@ function Admin() {
             controlId="desc"
             className="mb-3"
           >
+            
             <Form.Control onChange={(event) => {setDesc(event.target.value)}} as="textarea" value={desc}/>
           </FloatingLabel>
   
@@ -316,6 +317,7 @@ function Admin() {
           </Form.Group>
   
           <InputGroup className="mb-3">
+            
             <Form.Control
               placeholder="Subir Imagen"
               aria-describedby="basic-addon2"
