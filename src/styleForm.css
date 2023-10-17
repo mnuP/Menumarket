@@ -15,7 +15,7 @@
 
 /* NAVBAR */
 .principalNavbar {
-  background-image: url("/Users/jorgeanaya/Documents/Git/Menumarket/src/images/imagen-fondo-proveedor.png");
+  background-image: url("./images/imagen-fondo-proveedor.png");
   font-size: 11px;
 }
 
@@ -714,5 +714,5 @@ select {
 }
 
 .backgroundWhite {
-  background-image: url("/Users/jorgeanaya/Documents/Git/Menumarket/src/images/whiteBG.png");
+  background-image: url("./images/whiteBG.png");
 }
