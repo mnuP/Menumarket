@@ -16,6 +16,8 @@
 /* NAVBAR */
 .principalNavbar {
   background-image: url("./images/imagen-fondo-proveedor.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 14px;
 }
 
@@ -327,6 +329,7 @@ ol, ul, dl {
     position: absolute;
     top: 70px;
     background-image: url("./images/imagen-fondo-proveedor.png");
+    
   }
 
 .flTxt{
@@ -595,6 +598,7 @@ select {
 }
 
 .cards {
+
   &:hover{
     box-shadow: 0 0 1em 0 var(--mainColor2);  
     border: 0.5em solid var(--mainColor2);
@@ -604,13 +608,17 @@ select {
   }
 }
 
+
 .backgroundWhite {
   background-image: url("./images/whiteBG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 95vh
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 .container {
-  max-width: 1500px;
+  max-width: 1700px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -822,4 +830,9 @@ select {
   position: absolute;
   top: -3vh;
   right: 3vw;
+}
+
+.imgePreview {
+  height: 450px;
+  width: 450px;
 }

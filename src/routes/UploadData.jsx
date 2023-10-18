@@ -15,6 +15,7 @@ import { db } from '../firebase/firebase';
 
 function UploadData(props) {  
   const [imageUpload, setImageUpload] = useState('');
+  const [imageUpload2, setImageUpload2] = useState('');
   const [titulo, setTitulo] =useState(0);
   const [ciudad, setCiudad] =useState(0);
   const [clase, setClase] =useState(0);
@@ -27,6 +28,8 @@ function UploadData(props) {
   const [precio, setPrecio] =useState(0);
   const [incluye, setIncluye] =useState(0);
   const [url, setUrl] = useState(0);
+  const [url2, setUrl2] = useState(0);
+
   const location = useLocation();
   const itemPass = location.state.itemPass;
   
@@ -35,9 +38,17 @@ function UploadData(props) {
 
     e.preventDefault();
     const imageRef = ref(storage, `eventos/${"Profile" + imageUpload.name}`);
+    const imageRef2 = ref(storage, `eventos/${"Profile" + imageUpload2.name}`);
+
     await uploadBytes(imageRef, imageUpload)
+    await uploadBytes(imageRef2, imageUpload2)
+
     const url = await getDownloadURL(imageRef);
+    const url2 = await getDownloadURL(imageRef2);
+
     setUrl(url);
+    setUrl2(url2);
+
 
     try{ 
       const dataDocs = await addDoc(collection(db,"usersNoAceptados"), 
@@ -54,6 +65,7 @@ function UploadData(props) {
           price: precio,
           includes: incluye,
           photo: url,
+          photo2: url2,
           timeStamp: serverTimestamp(),
           accepted: "No Aceptado",
           user: itemPass
@@ -161,6 +173,15 @@ function UploadData(props) {
             aria-describedby="basic-addon2"
             type='file'
             onChange={(event) => {setImageUpload(event.target.files[0])}}
+          />
+        </InputGroup>
+
+        <InputGroup className="mb-3">
+          <Form.Control
+            placeholder="Subir Segunda Imagen"
+            aria-describedby="basic-addon2"
+            type='file'
+            onChange={(event) => {setImageUpload2(event.target.files[0])}}
           />
         </InputGroup>
 

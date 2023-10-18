@@ -2,6 +2,9 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
+
+import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import imagenFondo from "../images/fondoPostulacion.jpg";
@@ -13,7 +16,7 @@ import { ref, uploadBytes,getDownloadURL} from "firebase/storage";
 import {collection, addDoc, deleteDoc, serverTimestamp, onSnapshot, doc} from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
-import "../styleForm.css";
+import style from "../styleForm.css";
 
 
 function Admin() {  
@@ -30,6 +33,7 @@ function Admin() {
   const [precio, setPrecio] =useState(0);
   const [incluye, setIncluye] =useState(0);
   const [url, setUrl] = useState(0);
+  const [url2, setUrl2] = useState(0);
   const [items, setItems] = useState([]);
   const [itemIndex, setItemIndex] = useState(0);
   const [itemID, setItemID] = useState(0);
@@ -115,6 +119,7 @@ function Admin() {
       setPrecio(items[itemIndex].price)
       setIncluye(items[itemIndex].includes)
       setUrl(items[itemIndex].photo)
+      setUrl2(items[itemIndex].photo2)
       setItemID(items[itemIndex].id)
       setUser(items[itemIndex].user)
     }else{
@@ -155,6 +160,7 @@ function Admin() {
           price: precio,
           includes: incluye,
           photo: url,
+          photo2: url2,
           timeStamp: serverTimestamp(),
           user: user
         })
@@ -209,7 +215,7 @@ function Admin() {
       <div style={containerStyle}>
         <div style={frameStyle}>
           <div>
-          <Button type="button "class="btn btn-light" onClick={handleOnCLickLogin}>Login</Button>
+          <Button type="button "class="btn btn-light" className={`botonesUnicoFiltro`} onClick={handleOnCLickLogin}>Login</Button>
           </div>
         </div>
       </div>
@@ -315,16 +321,43 @@ function Admin() {
             <Form.Label className="flTxt">Incluye:</Form.Label>
             <Form.Control onChange={(event) => {setIncluye(event.target.value)}} value={incluye} placeholder="Si es restaurante (Uso de espacio, capacidad y equipamiento), Si es online (¿Se envian kits?)" />
           </Form.Group>
-  
-          <InputGroup className="mb-3">
-            
-            <Form.Control
-              placeholder="Subir Imagen"
-              aria-describedby="basic-addon2"
-              type='file'
-              //onChange={(event) => {setImageUpload(event.target.files[0])}}
-            />
-          </InputGroup>
+
+          <Container>
+            <Row>
+              <Col xs={8} md={6}>
+
+              <InputGroup>
+                  
+                  <Form.Control
+                    placeholder="Subir Imagen"
+                    aria-describedby="basic-addon2"
+                    type='file'
+                    //onChange={(event) => {setImageUpload(event.target.files[0])}}
+                  />
+                </InputGroup>                 
+                <br/>
+
+                <Image src={url} thumbnail />
+              </Col>
+              <Col xs={8} md={6}>
+
+              <InputGroup>
+                  
+                  <Form.Control
+                    placeholder="Subir Imagen"
+                    aria-describedby="basic-addon2"
+                    type='file'
+                    //onChange={(event) => {setImageUpload(event.target.files[0])}}
+                  />
+                </InputGroup>
+                <br/>
+
+                <Image src={url2} thumbnail />
+              </Col>
+            </Row>
+          </Container>
+
+          <br></br>
   
           <Button variant="success" type="submit">
             Aceptar

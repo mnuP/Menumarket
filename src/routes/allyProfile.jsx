@@ -8,7 +8,7 @@ import {auth, db, logout} from "../firebase/firebase";
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import style from"../navigation.module.css";
+import style from "../styleForm.css";
 import nullImage from "../images/nullPP.png";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -63,9 +63,10 @@ export default function AllyProfile(props) {
 
    return (
     <>
-        <Navbar style={{backgroundColor:"#000000"}} key="md" expand="md" className="mb-3 text-dark">
+      <div className= "principalNavbar" >
+        <Navbar key="md" expand="md" className="mb-3 text-dark navbarMain">
           <Container fluid>
-            <Navbar.Brand style={{width:"15vw", marginRight:"5vw"}} href="#">
+            <Navbar.Brand className="navbarMain-logo" href="#">
               <img
                 src="https://menumarket.co/wp-content/uploads/2022/03/menu-logo.png"
                 width="100%"
@@ -82,38 +83,34 @@ export default function AllyProfile(props) {
             >
               <Offcanvas.Body style={{display: 'flex', justifyContent: 'flex-end'}}>
                 <Form className="d-flex">
-                  <Button key="ButtonExit" onClick={doExit} style={{height: "46px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Volver</Button>
-                  <Button key="ButtonGo" onClick={doGoUpload} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>!Postula Tu Experiencia¡</Button>
-                  <Button key="ButtonAd" onClick={doManage} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888", display: admin}}>Administrar Postulaciones</Button>
+                  <Button key="ButtonExit" onClick={doExit} className="botonesUnicoFiltro" style={{margin:"1vw"}}>Volver</Button>
+                  <Button key="ButtonGo" onClick={doGoUpload} className="botonesUnicoFiltro" style={{margin:"1vw"}}>!Postula Tu Experiencia¡</Button>
+                  <Button key="ButtonAd" onClick={doManage} className="botonesUnicoFiltro" style={{margin:"1vw"}}>Administrar Postulaciones</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
 
-        <Row style={{margin: "0 3vw 3vw 3vw"}} xs={1} md={4} className="g-4">
+        <div className='backgroundWhite'>
+          <Row xs={1} md={4} className="g-4 itemsPage">
             {items.map((item) => (
-                <div style={{padding:"0 2vw"}}>
-                    <Col>
-                        <Card key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
-                            <Card.Img variant="top" src={item.photo} />
-                            <Card.Body>
-                                <Card.Title key={item.title}>{item.title}</Card.Title>
-                                <Card.Text key={item.description}>
-                                    <div className="vr"></div>
-
-                                    {item.class}
-                                    <div className="vr"></div>
-                                    {item.city}
-                                    <div className="vr"></div>
-                                    {item.modality}
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
+                <div className='ItemsInside'>
+                  <Col>
+                    <Card className={"cards"} key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
+                      <Card.Img variant="top" src={item.photo} />
+                      <Card.Body>
+                        <Card.Title key={item.title}>{item.title}</Card.Title>
+                        <Card.Text key={item.description}>       
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
                 </div>
             ))}
-        </Row>
+          </Row>
+        </div>
+      </div>
     </>
   );
 }

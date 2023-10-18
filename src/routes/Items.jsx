@@ -16,10 +16,9 @@ import {auth, logout} from "../firebase/firebase";
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 import nullImage from "../images/nullPP.png";
 import Footer from './Footer';
-import imagenFondo from "../images/imagen-fondo-proveedor.png";
 
 
-function Items({ query }) {
+function Items() {
 
     //-------------------------Autehntication--START-----------------//
     const [currentUser, setCurrent] = useState(null);
