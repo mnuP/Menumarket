@@ -4,7 +4,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import imagenFondo from "../images/fondoPostulacion.jpg";
+import imagenFondo from "../images/fondoPostulacion.jpeg";
 import { useState } from "react";
 import { storage } from "../firebase/firebase";
 import { useNavigate, useLocation } from 'react-router-dom';

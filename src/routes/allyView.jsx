@@ -49,7 +49,7 @@ export const AllyView = (props) => {
         </div>
         <p className="texto-experiencia">{location.state.item.description}</p>
         <div className="overlap">
-          <img className="imagen-SE" alt="Imagen SE" src={imagenSE} />
+          <img className="imagen-SE" alt="Imagen SE" src={location.state.item.photo2} />
           <div className="rectangle-2" />
         </div>
         <p className="p">¿Por que esta experiencia es perfecta para ti?</p>
