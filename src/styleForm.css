@@ -599,6 +599,8 @@ select {
 
 .cards {
 
+  height: 40vh;
+
   &:hover{
     box-shadow: 0 0 1em 0 var(--mainColor2);  
     border: 0.5em solid var(--mainColor2);
@@ -606,6 +608,14 @@ select {
     color: var(--mainColor2);
     transition: 0.3s;
   }
+}
+
+.cardsImage {
+  height: 32vh;
+}
+
+.cardsBody {
+  height: 8vh;
 }
 
 

@@ -436,8 +436,8 @@ function Items() {
                   <div className='ItemsInside'>
                     <Col>
                       <Card className={"cards"} key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
-                        <Card.Img variant="top" src={item.photo} />
-                        <Card.Body>
+                        <Card.Img className={"cardsImage"} variant="top" src={item.photo} />
+                        <Card.Body className={"cardsBody"}>
                           <Card.Title key={item.title}>{item.title}</Card.Title>
                           <Card.Text key={item.description}>       
                           </Card.Text>
