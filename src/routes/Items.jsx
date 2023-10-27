@@ -253,68 +253,10 @@ function Items() {
             
           </Container>
         </Navbar>
-
-        <Navbar key="md" expand="md" className="mb-3 text-dark navbarMain" >
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-md`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-md`}
-              placement="end"
-            >
-              <Offcanvas.Body>
-                <nav className='centerNav'>
-                  <div className="container" >
-                    <div className={`nav-elements  ${showNavbar && "active"}`} fluid>
-
-                      {/* Ciudad */}
-                      <ul>
-                        <li className={`botonesUnicoFiltro`}>
-                          <select key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
-                            <option id="none" value="none" selected hidden>Ciudad</option>
-                            {ciudad.map((item) => (
-                              <>
-                                <option eventKey={item} key={item}>{item}</option>
-                              </>
-                            ))}
-                          </select>
-                        </li>
+      </div>
 
 
-                        {/* Modalidad */}
-                        <li  className={`botonesUnicoFiltro`}>
-                          <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad" >
-                            <option value="none" selected  hidden>Modalidad</option>
-                            {modalidad.map((item) => (
-                              <>
-                                <option eventKey={item} key={item}>{item}</option>
-                              </>
-                            ))}
-                          </select>
-                        </li>
-
-                        {tipos.map((item) => (
-                          <li onClick={(e) => {handleFilterButtonClick(e.target.title); handleClick(e)}} key={item} id={`dropdown-split-variants-${item}`} title={item} variant = {item} className={`botonesUnicoFiltro`}>
-                            {item}
-                          </li>
-                          ),
-                        )}
-
-                        <li onClick={(e) => { applyFiltro(selectedFilters); }} key="apply" id={`dropdown-split-variants-apply`} title="apply" variant = "apply" className='botonSeleccion'>
-                          Seleccionados
-                        </li>
-
-                        <li onClick={(e) => resetFiltro()} key="reset" id={`dropdown-split-variants-reset`} title="reset" variant = "reset" className='botonReset'>
-                          Todos
-                        </li>
-                        <li></li>
-                      </ul>
-                    </div>
-                  </div>
-                </nav>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
-          </Navbar>
-        </div>
+        
         
 
         <div className="loader-container">
@@ -369,6 +311,9 @@ function Items() {
                 </Navbar.Offcanvas>
               </Container>
             </Navbar>
+            </div>
+
+            <div className='backgroundWhite'>
 
           <Navbar key="md" expand="md" className="mb-3 text-dark navbarMain" >
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} className='navbarToggle'/>
@@ -430,7 +375,7 @@ function Items() {
             </Navbar.Offcanvas>
           </Navbar>
           
-          <div className='backgroundWhite'>
+          {/* <div className='backgroundWhite'> */}
             <Row xs={1} md={4} className="g-4 itemsPage">
               {dishes.map((item) => (
                   <div className='ItemsInside'>
@@ -450,7 +395,6 @@ function Items() {
           </div>
           
           <Footer/>
-          </div>
       </>)}
     </>
   );

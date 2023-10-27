@@ -485,13 +485,13 @@ select {
   border-radius: 1rem;
   font: inherit;
   padding: 0.5rem;
-  color: var(--mainColor);
+  color: var(--mainColor2);
   background-color: var(--mainColorBlack);
-  border: 0.2em solid var(--mainColor);
+  border: 0.2em solid var(--mainColor2);
   &:hover{
-    box-shadow: 0 0 1em 0 var(--mainColor2);  
+    box-shadow: 0 0 1em 0 var(--mainColor3);  
     background-color: var(--mainColorBlack);
-    border: 0.2em solid var(--mainColor2);
+    border: 0.2em solid var(--mainColor3);
     color: var(--mainColor2);
   }
 }
@@ -500,13 +500,13 @@ select {
   border-radius: 1rem;
   font: inherit;
   padding: 0.5rem;
-  color: var(--mainColor);
+  color: var(--mainColor2);
   background-color: var(--mainColorBlack);
-  border: 0.2em solid var(--mainColor);
+  border: 0.2em solid var(--mainColor2);
   &:hover{
-    box-shadow: 0 0 1em 0 var(--mainColor2);  
+    box-shadow: 0 0 1em 0 var(--mainColor3);  
     background-color: var(--mainColorBlack);
-    border: 0.2em solid var(--mainColor2);
+    border: 0.2em solid var(--mainColor3);
     color: var(--mainColor2);
   }
 }
