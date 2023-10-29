@@ -610,6 +610,19 @@ select {
   }
 }
 
+.cartaEspecifica {
+
+  height: 45vh;
+
+  &:hover{
+    box-shadow: 0 0 1em 0 var(--mainColor2);  
+    border: 0.5em solid var(--mainColor2);
+    border-radius: 1em;
+    color: var(--mainColor2);
+    transition: 0.3s;
+  }
+}
+
 .cardsImage {
   height: 32vh;
 }
@@ -628,7 +641,7 @@ select {
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 .container {
-  max-width: 1700px;
+  max-width: 1800px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

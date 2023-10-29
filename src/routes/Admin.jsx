@@ -263,8 +263,9 @@ function Admin() {
                 <option>Seleccionar...</option>
                 <option>Restaurantes</option>
                 <option>Cata</option>
+                <option>De Temporada</option>
                 <option>Taller de Cocina</option>
-                <option>MasterClass</option>
+                <option>Master Class</option>
                 <option>Regalos Corporativos</option>
                 <option>Catering</option>
                 <option>Chef en Casa</option>

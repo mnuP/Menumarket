@@ -112,7 +112,7 @@ export default function Navigation() {
                       <img src={nullImage} alt="User Profile" style={{width: "40px", borderRadius: "50%",height: "40px",}}/>)}
                   </Button>
                   <Button id="ButonGO" onClick={handleOnClickGoUpload} style={{height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>{singButt}</Button>
-                  <Button key="ButtonLog" onClick={doLogout} style={{display: outButt,height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Cerrar Sesion</Button>
+                  <Button key="ButtonLog" onClick={doLogout} style={{display: none,height: "46px",marginLeft:"10px",backgroundColor: "#000000",border: "0.2em solid #CCD888",color: "#CCD888"}}>Cerrar Sesion</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

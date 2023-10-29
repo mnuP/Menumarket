@@ -91,7 +91,7 @@ function Items() {
     window.location.reload(false);
   }
 
-  const tipos = ["Cata", "Catering", "Chef en Casa", "Master Class",   "Regalos Corporativos", "Restaurantes", "Taller de Cocina"];
+  const tipos = ["Restaurantes",  "Cata", "Catering", "Chef en Casa", "Master Class",   "Regalos Corporativos", "De Temporada", "Taller de Cocina"];
   const ciudad = ["Bogota", "Medellin"];
   const modalidad = ["Presencial", "Virtual", "Hibrida"];
   const collectionRef = collection(db, "usersPrincipal");
@@ -269,11 +269,11 @@ function Items() {
       <div className="principalNavbar">
         <Navbar key="md" expand="md" className="mb-3 text-dark navbarMain">
               <Container fluid>
-                <Navbar.Brand className="navbarMain-logo"href="#">
+                <Navbar.Brand className="navbarMain-logo"href="https://menumarket.co/">
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/menumarket-b8993.appspot.com/o/logoRes.png?alt=media&token=c6553309-8232-4f92-a931-646bb48e878d&_gl=1*1w6iweb*_ga*MTg0NTk2OTc1NS4xNjkzNDUxNTQ1*_ga_CW55HF8NVT*MTY5NjYwMzMzMi40MC4xLjE2OTY2MDM0NDAuMTIuMC4w"
-                    width="50px"
-                    height="50px"
+                    src="https://menumarket.co/wp-content/uploads/2022/03/menu-logo.png"
+                    width="218px"
+                    height="70px"
                     className="d-inline-block align-top"
                     alt="React Bootstrap logo"
                   />
@@ -303,7 +303,7 @@ function Items() {
 
                       <Button id="ButonGO" onClick={handleOnClickGoUpload}>{singButt}</Button>
 
-                      <Button id="ButtonLog" onClick={doLogout}>Cerrar Sesion</Button>
+                      <Button id="ButtonLog" onClick={doLogout} style={{display: outButt}}>Cerrar Sesion</Button>
                       </div>
                       
                     </Form>
@@ -331,7 +331,7 @@ function Items() {
                       <ul>
                         <li className={`botonesUnicoFiltro`}>
                           <select key="Ciudad" id={`dropdown-split-variants-ciudad`} title="Ciudad" variant = "ciudad">
-                            <option id="none" value="none" selected hidden>Ciudad</option>
+                            <option id="none" value="none" selected hidden>Ciudad \/</option>
                             {ciudad.map((item) => (
                               <>
                                 <option eventKey={item} key={item}>{item}</option>
@@ -343,7 +343,7 @@ function Items() {
                         {/* Modalidad */}
                         <li  className={`botonesUnicoFiltro`}>
                           <select  key="Modalidad" id={`dropdown-split-variants-modalidad`} title="Modalidad" variant = "modalidad" >
-                            <option value="none" selected  hidden>Modalidad</option>
+                            <option value="none" selected  hidden>Modalidad \/</option>
                             {modalidad.map((item) => (
                               <>
                                 <option eventKey={item} key={item}>{item}</option>
@@ -360,11 +360,11 @@ function Items() {
                         )}
 
                         <li onClick={(e) => { applyFiltro(selectedFilters); }} key="apply" id={`dropdown-split-variants-apply`} title="apply" variant = "apply" className='botonSeleccion'>
-                          Seleccionados
+                          Ver Seleccionados
                         </li>
 
                         <li onClick={(e) => resetFiltro()} key="reset" id={`dropdown-split-variants-reset`} title="reset" variant = "reset" className='botonReset'>
-                          Todos
+                          Ver Todos
                         </li>
                         <li></li>
                       </ul>

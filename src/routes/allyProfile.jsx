@@ -13,7 +13,7 @@ import nullImage from "../images/nullPP.png";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import { onSnapshot, collection} from "firebase/firestore";
+import { onSnapshot, collection, doc, deleteDoc} from "firebase/firestore";
 
 
 
@@ -30,6 +30,16 @@ export default function AllyProfile(props) {
     function doGoUpload(){
         navigate("Upload", {state: {itemPass}});
     };
+
+    async function eliminarExperiencia(itemID){
+      try {
+        const docRef = doc(db, 'usersPrincipal', itemID);
+        deleteDoc(docRef);
+  
+      }catch(err){
+        console.log(err);
+      };
+    }
 
     function doExit(){
         navigate(-1);
@@ -97,13 +107,12 @@ export default function AllyProfile(props) {
             {items.map((item) => (
                 <div className='ItemsInside'>
                   <Col>
-                    <Card className={"cards"} key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
+                    <Card className={"cartaEspecifica"} key={item.id}>
                       <Card.Img className={"cardsImage"} variant="top" src={item.photo} />
                       <Card.Body className={"cardsBody"}>
-                        <Card.Title key={item.title}>{item.title}</Card.Title>
-                        <Card.Text key={item.description}>       
-                        </Card.Text>
+                        <Card.Title key={item.title}>{item.title}</Card.Title>    
                       </Card.Body>
+                      <Button onClick={()=>{eliminarExperiencia(item.id)}}>Eliminar</Button> 
                     </Card>
                   </Col>
                 </div>
