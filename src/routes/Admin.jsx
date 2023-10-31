@@ -240,7 +240,7 @@ function Admin() {
             Siguiente
           </Button>
           <Row className="mb-3">
-            <Form.Group as={Col} controlId="titulo">
+            <Form.Group as={Col} controlId="titulo (Nombre restaurante, experiencia o chef)">
               <Form.Label className="flTxt">Titulo:</Form.Label>
               <Form.Control onChange={(event) => {setTitulo(event.target.value); }} type="Text" value={titulo} />
             </Form.Group>

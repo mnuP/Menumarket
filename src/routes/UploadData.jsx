@@ -85,7 +85,7 @@ function UploadData(props) {
       <div className="form-p">
         <Form onSubmit={uploadForm} style={{ padding:"10vh 5vw"}}>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="titulo">
+          <Form.Group as={Col} controlId="titulo (Nombre del restaurante, experiencia o chef)">
             <Form.Label className="flTxt">Titulo:</Form.Label>
             <Form.Control onChange={(event) => {setTitulo(event.target.value)}} type="Text" placeholder="Titulo evento..." />
           </Form.Group>
