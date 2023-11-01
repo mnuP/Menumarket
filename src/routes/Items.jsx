@@ -15,6 +15,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import {auth, logout} from "../firebase/firebase";
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 import nullImage from "../images/nullPP.png";
+import logoPPal from "../images/logoNuevoPP.png";
 import Footer from './Footer';
 
 
@@ -271,9 +272,9 @@ function Items() {
               <Container fluid>
                 <Navbar.Brand className="navbarMain-logo"href="https://menumarket.co/">
                   <img
-                    src="https://menumarket.co/wp-content/uploads/2022/03/menu-logo.png"
-                    width="218px"
-                    height="70px"
+                    src={logoPPal}
+                    width='100%'
+                    height = '100%'
                     className="d-inline-block align-top"
                     alt="React Bootstrap logo"
                   />

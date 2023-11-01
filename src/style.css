@@ -246,12 +246,17 @@ body {
   gap: 10px;
   position: relative;
   width: 100%;
+  background-color: grey;
 }
 
 .fondo-p .imagen-p {
-  height: 100dvh;
+  height: 1200px;
   width: 100vw;
   position: relative;
+}
+
+.textoInformacion {
+  color:whitesmoke;
 }
 
 @media (max-width: 1500px){

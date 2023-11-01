@@ -186,6 +186,11 @@ function UploadData(props) {
           />
         </InputGroup>
 
+        <p className='textoInformacion'>Los datos personales serán tratados como lo establece la Ley 1581 de 2012, reglamentada por el decreto 1377 de 2013, <br/>
+        sobre la autorización del Titular de información para el Tratamiento de sus datos personales, las políticas de<br/>
+        Tratamiento de los Responsables y Encargados, el ejercicio de los derechos de los Titulares de información,<br/>
+        las transferencias de datos personales y demás inherentes a la información suministrada.</p>
+
         <Button variant="light" type="submit">
           Enviar
         </Button>

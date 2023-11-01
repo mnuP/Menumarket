@@ -14,6 +14,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import { onSnapshot, collection, doc, deleteDoc} from "firebase/firestore";
+import logoPPal from "../images/logoNuevoPP.png";
 
 
 
@@ -78,7 +79,7 @@ export default function AllyProfile(props) {
           <Container fluid>
             <Navbar.Brand className="navbarMain-logo" href="#">
               <img
-                src="https://menumarket.co/wp-content/uploads/2022/03/menu-logo.png"
+                src={logoPPal}
                 width="100%"
                 height="100%"
                 className="d-inline-block align-top"
