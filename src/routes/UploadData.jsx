@@ -16,11 +16,13 @@ import { db } from '../firebase/firebase';
 function UploadData(props) {  
   const [imageUpload, setImageUpload] = useState('');
   const [imageUpload2, setImageUpload2] = useState('');
+  const [imageUpload3, setImageUpload3] = useState('');
   const [titulo, setTitulo] =useState(0);
   const [ciudad, setCiudad] =useState(0);
   const [clase, setClase] =useState(0);
   const [modality, setModality] =useState(0);
   const [dir, setDir] =useState(0);
+  const [extra, setExtra] =useState(0);
   const [desc, setDesc] =useState(0);
   const [capacity, setCapacity] =useState(0);
   const [disponibility, setDisponibility] =useState(0);
@@ -29,6 +31,7 @@ function UploadData(props) {
   const [incluye, setIncluye] =useState(0);
   const [url, setUrl] = useState(0);
   const [url2, setUrl2] = useState(0);
+  const [url3, setUrl3] = useState(0);
 
   const location = useLocation();
   const itemPass = location.state.itemPass;
@@ -39,15 +42,19 @@ function UploadData(props) {
     e.preventDefault();
     const imageRef = ref(storage, `eventos/${"Profile" + imageUpload.name}`);
     const imageRef2 = ref(storage, `eventos/${"Profile" + imageUpload2.name}`);
+    const imageRef3 = ref(storage, `eventos/${"Profile" + imageUpload3.name}`);
 
     await uploadBytes(imageRef, imageUpload)
     await uploadBytes(imageRef2, imageUpload2)
+    await uploadBytes(imageRef3, imageUpload3)
 
     const url = await getDownloadURL(imageRef);
     const url2 = await getDownloadURL(imageRef2);
+    const url3 = await getDownloadURL(imageRef3);
 
     setUrl(url);
     setUrl2(url2);
+    setUrl3(url3);
 
 
     try{ 
@@ -57,6 +64,7 @@ function UploadData(props) {
           city: ciudad,
           class: clase,
           modality: modality,
+          extra: extra,
           direction: dir,
           description: desc,
           capacity: capacity,
@@ -66,6 +74,7 @@ function UploadData(props) {
           includes: incluye,
           photo: url,
           photo2: url2,
+          photo3: url3,
           timeStamp: serverTimestamp(),
           accepted: "No Aceptado",
           user: itemPass
@@ -133,6 +142,11 @@ function UploadData(props) {
           <Form.Control onChange={(event) => {setDir(event.target.value)}} placeholder="Carrera 7a # 1-70" />
         </Form.Group>
 
+        <Form.Group className="mb-3" controlId="extra">
+          <Form.Label className="flTxt">Especialidad o Anfitrion:</Form.Label>
+          <Form.Control onChange={(event) => {setExtra(event.target.value)}} placeholder="Especialidad del restaurante o Nombre del Anfitrion" />
+        </Form.Group>
+
         <FloatingLabel
           controlId="desc"
           label="Descripcion"
@@ -164,11 +178,12 @@ function UploadData(props) {
         </Row>
 
         <Form.Group className="mb-3" controlId="incluye">
-          <Form.Label className="flTxt">Incluye:</Form.Label>
+          <Form.Label className="flTxt">Que Incluye o Uso del espacio:</Form.Label>
           <Form.Control onChange={(event) => {setIncluye(event.target.value)}} placeholder="50g de té, 2 infusores bola, 1 cuchara medidora, 2 cuencos de cristal, plegable informativo y envio nacional." />
         </Form.Group>
 
         <InputGroup className="mb-3">
+          <Form.Label className="flTxt">Imagen principal o Logo &nbsp; </Form.Label>
           <Form.Control
             placeholder="Subir Imagen"
             aria-describedby="basic-addon2"
@@ -178,11 +193,22 @@ function UploadData(props) {
         </InputGroup>
 
         <InputGroup className="mb-3">
+        <Form.Label className="flTxt">Segunda Imagen &nbsp;&nbsp; </Form.Label>
           <Form.Control
             placeholder="Subir Segunda Imagen"
             aria-describedby="basic-addon2"
             type='file'
             onChange={(event) => {setImageUpload2(event.target.files[0])}}
+          />
+        </InputGroup>
+
+        <InputGroup className="mb-3">
+        <Form.Label className="flTxt">Tercera Imagen &nbsp;&nbsp;&nbsp; </Form.Label>
+          <Form.Control
+            placeholder="Subir Tercera Imagen"
+            aria-describedby="basic-addon2"
+            type='file'
+            onChange={(event) => {setImageUpload3(event.target.files[0])}}
           />
         </InputGroup>
 
