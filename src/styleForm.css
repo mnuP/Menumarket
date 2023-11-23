@@ -206,6 +206,11 @@ ol, ul, dl {
     top: 424px;
     width: 34px;
   }
+
+  .desktop .iconTxt {
+    height: 32px;
+    width: 32px;
+  }
   
   .desktop .octicon-person {
     height: 34px;
