@@ -102,6 +102,64 @@ export const AllyView = (props) => {
       </div>
       <Footer/>
     </div>);
+  }else if(location.state.item.class === "Regalos Corporativos"){
+    return (
+    <div>
+      <div className="desktop">
+        <div className="div" style={{height:"1000px"}}>
+          <div className="overlap-group">
+            <div className="overlap-group">
+            <img className="imagen-fondo" alt="Imagen fondo" src={imagenFondo} />
+              <div className="text-wrapper">{location.state.item.title}</div>
+              <button onClick={()=>{navigate("cotizacion", {state:{itemPass}})}} className="button">!Cotiza aqui!</button>
+              <div className="proveedor">
+                <div className="rectangle" />
+                <img className="imagen" alt="Imagen" src={location.state.item.photo} />
+                <div className="titulo-experiencia">Anfitrion</div>
+              </div>
+            </div>
+            <div className="informacion-basica">
+              <div className="frame">
+                <div className="text-wrapper-2">{location.state.item.includes} </div>
+              </div>
+            </div>
+            <img className="pepicons-pencil" alt="Pepicons pencil" src="https://api.iconify.design/codicon/settings.svg" />
+          </div>
+        </div>
+      </div>
+      <Footer/>
+    </div>
+    
+    );
+  }else if(location.state.item.class === "Master Class"){
+    return (
+    <div>
+      <div className="desktop">
+        <div className="div" style={{height:"1000px"}}>
+          <div className="overlap-group">
+            <div className="overlap-group">
+            <img className="imagen-fondo" alt="Imagen fondo" src={imagenFondo} />
+              <div className="text-wrapper">{location.state.item.title}</div>
+              <button onClick={()=>{navigate("cotizacion", {state:{itemPass}})}} className="button">!Cotiza aqui!</button>
+              <div className="proveedor">
+                <div className="rectangle" />
+                <img className="imagen" alt="Imagen" src={location.state.item.photo} />
+                <div className="titulo-experiencia">Anfitrion</div>
+              </div>
+            </div>
+            <div className="informacion-basica">
+              <div className="frame">
+                <div className="text-wrapper-2">{location.state.item.description} </div>
+              </div>
+            </div>
+            <img className="pepicons-pencil" alt="Pepicons pencil" src="https://api.iconify.design/codicon/settings.svg" />
+          </div>
+        </div>
+      </div>
+      <Footer/>
+    </div>
+    
+    );
   }
 
   return (

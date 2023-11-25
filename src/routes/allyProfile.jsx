@@ -55,6 +55,7 @@ export default function AllyProfile(props) {
     };
 
     useEffect(()=> {
+        console.log(admin)
         const dataTest =  onSnapshot(collectionRef,(querySnapshot) => {
             const items = [];
             querySnapshot.forEach((doc) => {
@@ -96,7 +97,7 @@ export default function AllyProfile(props) {
                 <Form className="d-flex">
                   <Button key="ButtonExit" onClick={doExit} className="botonesUnicoFiltro" style={{margin:"1vw"}}>Volver</Button>
                   <Button key="ButtonGo" onClick={doGoUpload} className="botonesUnicoFiltro" style={{margin:"1vw"}}>!Postula Tu Experiencia¡</Button>
-                  <Button key="ButtonAd" onClick={doManage} className="botonesUnicoFiltro" style={{margin:"1vw"}}>Administrar Postulaciones</Button>
+                  <Button key="ButtonAd" onClick={doManage} className="botonesUnicoFiltro" style={{margin:"1vw", display:admin}}>Administrar Postulaciones</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
