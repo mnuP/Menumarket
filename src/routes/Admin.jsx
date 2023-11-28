@@ -32,8 +32,10 @@ function Admin() {
   const [tiempo, setTiempo] =useState(0);
   const [precio, setPrecio] =useState(0);
   const [incluye, setIncluye] =useState(0);
+  const [extra, setExtra] =useState(0);
   const [url, setUrl] = useState(0);
   const [url2, setUrl2] = useState(0);
+  const [url3, setUrl3] = useState(0);
   const [items, setItems] = useState([]);
   const [itemIndex, setItemIndex] = useState(0);
   const [itemID, setItemID] = useState(0);
@@ -120,8 +122,10 @@ function Admin() {
       setIncluye(items[itemIndex].includes)
       setUrl(items[itemIndex].photo)
       setUrl2(items[itemIndex].photo2)
+      setUrl3(items[itemIndex].photo3)
       setItemID(items[itemIndex].id)
       setUser(items[itemIndex].user)
+      setExtra(items[itemIndex].extra)
     }else{
       window.alert("Debe importar los proveedores");
     };  
@@ -152,6 +156,7 @@ function Admin() {
           city: ciudad,
           class: clase,
           modality: modality,
+          extra: extra,
           direction: dir,
           description: desc,
           capacity: capacity,
@@ -161,6 +166,7 @@ function Admin() {
           includes: incluye,
           photo: url,
           photo2: url2,
+          photo3: url3,
           timeStamp: serverTimestamp(),
           user: user
         })
@@ -286,6 +292,11 @@ function Admin() {
           <Form.Group className="mb-3" controlId="dir">
             <Form.Label className="flTxt">Direccion:</Form.Label>
             <Form.Control onChange={(event) => {setDir(event.target.value)}} value={dir}/>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="extra">
+            <Form.Label className="flTxt">Especialidad o Anfitrion:</Form.Label>
+            <Form.Control onChange={(event) => {setExtra(event.target.value)}} placeholder="Especialidad del restaurante o Nombre del Anfitrion" />
           </Form.Group>
   
           <FloatingLabel

@@ -110,17 +110,17 @@ export const AllyView = (props) => {
           <div className="overlap-group">
             <div className="overlap-group">
             <img className="imagen-fondo" alt="Imagen fondo" src={imagenFondo} />
-              <div className="text-wrapper">{location.state.item.title}</div>
+              <div className="text-wrapper">Regalos Corporativos</div>
               <button onClick={()=>{navigate("cotizacion", {state:{itemPass}})}} className="button">!Cotiza aqui!</button>
               <div className="proveedor">
                 <div className="rectangle" />
-                <img className="imagen" alt="Imagen" src={location.state.item.photo} />
-                <div className="titulo-experiencia">Anfitrion</div>
+                <img className="imagen" alt="Imagen"  src={location.state.item.photo} />
+                <div className="titulo-experiencia">{location.state.item.title}</div>
               </div>
             </div>
             <div className="informacion-basica">
               <div className="frame">
-                <div className="text-wrapper-2">{location.state.item.includes} </div>
+                <div className="text-wrapper-2">{location.state.item.includes}</div>
               </div>
             </div>
             <img className="pepicons-pencil" alt="Pepicons pencil" src="https://api.iconify.design/codicon/settings.svg" />
@@ -139,17 +139,17 @@ export const AllyView = (props) => {
           <div className="overlap-group">
             <div className="overlap-group">
             <img className="imagen-fondo" alt="Imagen fondo" src={imagenFondo} />
-              <div className="text-wrapper">{location.state.item.title}</div>
+              <div className="text-wrapper" >Master class</div>
               <button onClick={()=>{navigate("cotizacion", {state:{itemPass}})}} className="button">!Cotiza aqui!</button>
               <div className="proveedor">
-                <div className="rectangle" />
-                <img className="imagen" alt="Imagen" src={location.state.item.photo} />
-                <div className="titulo-experiencia">Anfitrion</div>
+                <div className="rectangle"/>
+                <img className="imagen" alt="Imagen" style={{borderWidth: "10px", borderColor: "#d5c25d", borderStyle:"solid"}} src={location.state.item.photo} />
+                <div className="titulo-experiencia">{location.state.item.extra}</div>
               </div>
             </div>
             <div className="informacion-basica">
               <div className="frame">
-                <div className="text-wrapper-2">{location.state.item.description} </div>
+                <div className="text-wrapper-2" style={{fontSize: 18, lineHeight: 2, textAlign: "justify"}}>{location.state.item.description} </div>
               </div>
             </div>
             <img className="pepicons-pencil" alt="Pepicons pencil" src="https://api.iconify.design/codicon/settings.svg" />
