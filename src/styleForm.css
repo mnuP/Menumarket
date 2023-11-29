@@ -37,6 +37,7 @@ ol, ul, dl {
 
 .centerNav {
   text-align: center;
+  padding: 0px;
 }
 
 .navbarMain-logo {
@@ -641,7 +642,7 @@ select {
   background-image: url("./images/whiteBG.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 95vh
+  height: 110vh
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
@@ -850,8 +851,8 @@ select {
 }
 
 .nav-elements ul li:not(:last-child) {
-  margin-right: 1vw;
-  margin-left: 1vw;
+  margin-right: 0.7vw;
+  margin-left: 0.7vw;
 }
 
 .navbarToggle{
