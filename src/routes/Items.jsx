@@ -384,7 +384,7 @@ function Items() {
                       <Card className={"cards"} key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
                         <Card.Img className={"cardsImage"} variant="top" src={item.photo} />
                         <Card.Body className={"cardsBody"}>
-                          <Card.Title key={item.title}>{item.title}</Card.Title>
+                          <Card.Title key={item.title}><img className="pepicons-pencil" alt="Pepicons pencil" src="https://api.iconify.design/material-symbols/border-all.svg"/> {item.title}</Card.Title>
                           <Card.Text key={item.description}>       
                           </Card.Text>
                         </Card.Body>
