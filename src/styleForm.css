@@ -208,6 +208,13 @@ ol, ul, dl {
     width: 34px;
   }
 
+  .cardIcon {
+    height: 23px;
+    width: 23px;
+    color: #c5a263;
+    fill: #c5a263;
+  }
+
   .desktop .iconTxt {
     height: 32px;
     width: 32px;

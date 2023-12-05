@@ -139,7 +139,7 @@ export const AllyView = (props) => {
           <div className="overlap-group">
             <div className="overlap-group">
             <img className="imagen-fondo" alt="Imagen fondo" src={imagenFondo} />
-              <div className="text-wrapper" >Master class</div>
+              <div className="text-wrapper" >Master Class</div>
               <button onClick={()=>{navigate("cotizacion", {state:{itemPass}})}} className="button">!Cotiza aqui!</button>
               <div className="proveedor">
                 <div className="rectangle"/>
@@ -149,13 +149,13 @@ export const AllyView = (props) => {
             </div>
             <div className="informacion-basica">
               <div className="frame">
-                <div className="text-wrapper-2" style={{fontSize: 26, color: "#d5c25d"}}>{location.state.item.title}</div>
+                <div className="text-wrapper-2" style={{fontSize: 28, color: "#d5c25d", lineHeight: 1}}>{location.state.item.title}</div>
               </div>
               <div className="frame">
                 <div className="text-wrapper-2" style={{fontSize: 18, lineHeight: 2, textAlign: "justify"}}>{location.state.item.description} </div>
               </div>
             </div>
-            <img className="pepicons-pencil" alt="Pepicons pencil" src="https://api.iconify.design/material-symbols/border-all.svg"/>
+            <img style={{color: "#c5a263"}} className="pepicons-pencil" alt="Pepicons pencil" src="https://api.iconify.design/icon-park-solid/laptop-computer.svg"/>
           </div>
         </div>
       </div>
