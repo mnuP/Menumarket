@@ -17,7 +17,13 @@ import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from
 import nullImage from "../images/nullPP.png";
 import logoPPal from "../images/logoNuevoPP.png";
 import Footer from './Footer';
+import onIcon from "../images/onSiteIco.svg";
 
+var dict = { "Presencial" : "https://api.iconify.design/el/group.svg?color=%23c5a263", 
+             "Virtual" : "https://api.iconify.design/mdi/virtual-meeting.svg?color=%23c5a263",
+             "Hibrida" : "https://api.iconify.design/ri/exchange-fill.svg?color=%23c5a263"};
+
+/*https://api.iconify.design/el/group.svg*/
 
 function Items() {
 
@@ -375,8 +381,7 @@ function Items() {
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Navbar>
-          
-          {/* <div className='backgroundWhite'> */}
+
             <Row xs={1} md={4} className="g-4 itemsPage">
               {dishes.map((item) => (
                   <div className='ItemsInside'>
@@ -384,7 +389,7 @@ function Items() {
                       <Card className={"cards"} key={item.id} onClick={()=>{navigate("ally", {state:{item}})}}>
                         <Card.Img className={"cardsImage"} variant="top" src={item.photo} />
                         <Card.Body className={"cardsBody"}>
-                          <Card.Title key={item.title}><img className="pepicons-pencil" alt="Pepicons pencil" src="https://api.iconify.design/material-symbols/border-all.svg"/> {item.title}</Card.Title>
+                          <Card.Title key={item.title}><img className="cardIcon" alt="Pepicons pencil" src={dict[item.modality]}/> {item.title}</Card.Title>
                           <Card.Text key={item.description}>       
                           </Card.Text>
                         </Card.Body>
